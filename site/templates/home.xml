@@ -9,7 +9,8 @@
 		</head>
 
 		<body>
-			<h1>It works!</h1>
+			<!-- Top section of the site -->
+			<cms:template file="parts/header.xml"/>
 		</body>
 	</html>
 </document>

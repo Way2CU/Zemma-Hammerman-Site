@@ -1,0 +1,65 @@
+/**
+ * Mobile header Style Sheet
+ * Zemah hamerman site
+ *
+ * Copyright (c) 2016. by Way2CU, http://way2cu.com
+ * Authors:Tal Reznic
+ */
+
+div.mobile_title {
+	background-color: @color_text;
+	height: 3.5em;
+}
+
+div.mobile_title:before {
+	content: "";
+	display: inline-block;
+	vertical-align: middle;
+	height: 100%;
+}
+
+div.mobile_title a {
+	position: absolute;
+	padding: 0.5em;
+	top: 50%;
+	left: 0;
+	transform: translatey(-50%);
+}
+
+div.mobile_title a.phone {
+	left: auto;
+	right: 0;
+}
+
+div.mobile_title a svg {
+	display: block;
+	width: 2.5em;
+	height: 2.5em;
+	fill: @color_background;
+}
+
+div.mobile_title h1 {
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0;
+	padding-right: 2em;
+}
+
+nav.mobile_menu {
+	right: -100%;
+	text-align: center;
+	background-color: @color_grey;
+	overflow-y: scroll;
+}
+
+nav.mobile_menu.visible {
+	right: 0;
+	width: 100%;
+}
+
+nav.mobile_menu a {
+	padding: 1.2em 1em;
+	font-weight: 700;
+	color: @color_background;
+	border-bottom: 1px solid @color_background;
+}

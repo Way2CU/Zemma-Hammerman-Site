@@ -1,0 +1,73 @@
+<document>
+	<!-- Site sprite -->
+	<cms:svg file="site-sprite.svg"/>
+
+	<header class="$section" cms:eval="class">
+		<div class="mobile_title">
+			<a
+				href="'tel:'.urlencode(Language::getText('phone'))"
+				cms:eval="href"
+				class="phone"
+				>
+				<cms:svg file="site-sprite.svg" symbol="phone"/>
+			</a>
+
+			<!-- header title -->
+			<cms:if condition="isset($template['title'])">
+				<h1>
+					<cms:text constant="$template['title']" cms:eval="constant"/>
+				</h1>
+			</cms:if>
+
+			<a
+				href="javascript:void(0)"
+				class="menu"
+				>
+				<cms:svg file="site-sprite.svg" symbol="menu"/>
+			</a>
+		</div>
+
+		<nav class="mobile_menu">
+			<a
+				class="$section == 'home' ? 'active' : false"
+				href="url_Make('', 'home')"
+				cms:eval="href"
+				cms:optional="class"
+				>
+				<cms:text constant="menu_home"/>
+			</a>
+			<a
+				class="$section == 'about' ? 'active' : false"
+				href="url_Make('', 'about')"
+				cms:eval="href"
+				cms:optional="class"
+				>
+				<cms:text constant="menu_about"/>
+			</a>
+			<a
+				class="$section == 'news' ? 'active' : false"
+				href="url_Make('', 'news')"
+				cms:eval="href"
+				cms:optional="class"
+				>
+				<cms:text constant="menu_news"/>
+			</a>
+			<a
+				class="$section == 'projects' ? 'active' : false"
+				href="url_Make('', 'projects')"
+				cms:eval="href"
+				cms:optional="class"
+				>
+				<cms:text constant="menu_projects"/>
+			</a>
+			<a
+				class="$section == 'contact' ? 'active' : false"
+				href="url_Make('', 'contact')"
+				cms:eval="href"
+				cms:optional="class"
+				>
+				<cms:text constant="menu_contact"/>
+			</a>
+		</nav>
+	</header>
+</document>
