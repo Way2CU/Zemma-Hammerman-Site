@@ -9,11 +9,11 @@
 // create or use existing site scope
 var Site = Site || {};
 
-Site.knob_rotation = function(container, knob, elements ) {
+Site.knob = function(container, knob, elements ) {
 	var self = this;
 
 	self.container = document.querySelector(container);
-	self.knob = document.querySelector(knob);
+	self.knob = self.container.querySelector(knob);
 	self.elements = document.querySelectorAll(elements);
 	self.radius = self.container.clientHeight / 2;
 	self.container_center = {x: self.radius, y: self.radius};
@@ -36,10 +36,9 @@ Site.knob_rotation = function(container, knob, elements ) {
 			// set text of labels
 			menu_item.innerText = self.elements[i].getAttribute('alt');
 			self.container.appendChild(menu_item);
-
-			// assign touch events to knob element
-			self.knob.addEventListener('touchmove', self.handle_touchmove);
 		}
+		// assign touch events to knob element
+		self.knob.addEventListener('touchstart', self.handle_touchmove);
 	}
 
 	// handle touchstart
@@ -64,5 +63,5 @@ Site.knob_rotation = function(container, knob, elements ) {
 }
 
 $(function() {
-	Site.rotate = new Site.knob_rotation('div#controls', 'div.knob', 'div.slider img');
+	Site.rotate = new Site.knob('div#controls', 'div.knob', 'div.slider img');
 })
