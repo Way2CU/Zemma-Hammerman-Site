@@ -42,27 +42,27 @@ Site.Knob = function(container, knob, elements) {
 	}
 
 	/*
-	 * Handle initial event when user touches knob element
+	 * Handle initial event when user touches knob element.
 	 *
-	 * @param object event
+	 * @param object event.
 	 */
 	self.handle_touchstart = function(event) {
 
 	}
 
 	/*
-	 * Handle event when user rotates knob element
+	 * Handle event when user rotates knob element.
 	 *
-	 * @param object event
+	 * @param object event.
 	 */
 	self.handle_touchmove = function(event) {
 		var touch = event.touches[0];
 	}
 
 	/*
-	 * Handle event when user stops touching knob element
+	 * Handle event when user stops touching knob element.
 	 *
-	 * @param object event
+	 * @param object event.
 	 */
 	self.handle_touchend = function(event) {
 
