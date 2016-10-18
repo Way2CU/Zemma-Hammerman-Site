@@ -1,5 +1,5 @@
 /**
- * Nobe rotate JavaScript
+ * Knob JavaScript
  * Zemah hamerman site
  *
  * Copyright (c) 2016. by Way2CU, http://way2cu.com
