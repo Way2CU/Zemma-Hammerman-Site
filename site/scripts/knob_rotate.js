@@ -9,7 +9,7 @@
 // create or use existing site scope
 var Site = Site || {};
 
-Site.Knob = function(container, knob, elements ) {
+Site.Knob = function(container, knob, elements) {
 	var self = this;
 
 	self.container = document.querySelector(container);
