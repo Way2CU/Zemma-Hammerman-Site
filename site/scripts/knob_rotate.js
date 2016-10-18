@@ -16,6 +16,8 @@ Site.Knob = function(container, knob, elements) {
 	self.knob = self.container.querySelector(knob);
 	self.elements = document.querySelectorAll(elements);
 	self.radius = self.container.clientHeight / 2;
+	self.knob_radius = self.knob.clientHeight / 2;
+	self.knob_center = {x: self.knob_radius, y: self.knob_radius};
 	self.container_center = {x: self.radius, y: self.radius};
 	self.handle = false;
 
@@ -38,7 +40,7 @@ Site.Knob = function(container, knob, elements) {
 			self.container.appendChild(menu_item);
 		}
 		// assign touch events to knob element
-		self.knob.addEventListener('touchstart', self.handle_touchmove);
+		self.knob.addEventListener('touchstart', self.handle_touchstart);
 	}
 
 	/*
@@ -47,7 +49,14 @@ Site.Knob = function(container, knob, elements) {
 	 * @param object event.
 	 */
 	self.handle_touchstart = function(event) {
-
+		if(!Site.handle) {
+			var touch = event.touches[0];
+			var pos_x = touch.clientX;
+			var pos_y = touch.clientY;
+			var radian = Math.atan(pos_y - self.knob_center.y / pos_x - self.knob_center.x);
+			radian += 'rad';
+			self.knob.style.transform = 'rotate('+radian+')';
+		}
 	}
 
 	/*
@@ -56,7 +65,7 @@ Site.Knob = function(container, knob, elements) {
 	 * @param object event.
 	 */
 	self.handle_touchmove = function(event) {
-		var touch = event.touches[0];
+
 	}
 
 	/*
