@@ -41,19 +41,29 @@ Site.Knob = function(container, knob, elements) {
 		self.knob.addEventListener('touchstart', self.handle_touchmove);
 	}
 
-	// handle touchstart
+	/*
+	 * Handle initial event when user touches knob element
+	 *
+	 * @param object event
+	 */
 	self.handle_touchstart = function(event) {
 
 	}
 
-	// handle touchmove
+	/*
+	 * Handle event when user rotates knob element
+	 *
+	 * @param object event
+	 */
 	self.handle_touchmove = function(event) {
 		var touch = event.touches[0];
-
-		self.knob.style
 	}
 
-	// handle touchend
+	/*
+	 * Handle event when user stops touching knob element
+	 *
+	 * @param object event
+	 */
 	self.handle_touchend = function(event) {
 
 	}
