@@ -1,0 +1,102 @@
+/**
+ * Content mobile Style Sheet
+ * Zemah hamerman site
+ *
+ * Copyright (c) 2016. by Way2CU, http://way2cu.com
+ * Authors:Tal Reznic
+ */
+
+@images_height: 0.60166;
+
+div.slider {
+	position: relative;
+	height: calc(100vw * @images_height);
+	background-image: url(../images/logo-white.svg);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 250px auto;
+	overflow: hidden;
+}
+
+div.slider img {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: auto;
+	transform: translatey(-50%);
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.3s;
+}
+
+
+div.slider img.visible {
+	opacity: 1;
+	visibility: visible;
+}
+
+body.home section {
+	background-image: url(../images/dots-background.jpg);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 100% auto;
+	height: calc(~'100vw * 1.17222');
+	position: relative;
+}
+
+section h2 {
+	margin: 0;
+	padding: 0.5em 0em;
+	text-align: center;
+	color: @color_background;
+}
+
+div#controls {
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 2em;
+	margin-bottom: 2em;
+	width: 250px;
+	height: 250px;
+}
+
+div#controls span.control {
+	text-align: center;
+	color: @color_background;
+	width: 70px;
+	position: relative;
+}
+
+div#controls span.control:after {
+	content: "";
+	position: absolute;
+	top: 105%;
+	left: 50%;
+	width: 10px;
+	height: 10px;
+	border: 2px solid white;
+	border-radius: 50%;
+	transform: translatex(-50%);
+	transition: all 0.3s;
+}
+
+div#controls span.control.active:after {
+	background-color: @color_red;
+}
+
+div#controls div.knob {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	background-image: url(../images/nobe.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 150px 150px;
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	transform: translate(-50%, -50%);
+}

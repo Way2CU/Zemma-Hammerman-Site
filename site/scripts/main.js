@@ -51,6 +51,11 @@ Site.is_mobile = function() {
 Site.on_load = function() {
 	if (Site.is_mobile())
 		Site.mobile_menu = new Caracal.MobileMenu();
+
+	// create page control for home page
+	Site.home_page_menu = new PageControl('div.slider', 'img.image');
+	Site.home_page_menu
+		.attachControls($('div#controls span.control'));
 };
 
 

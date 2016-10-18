@@ -2,7 +2,7 @@
 	<!-- Site sprite -->
 	<cms:svg file="site-sprite.svg"/>
 
-	<header class="$section" cms:eval="class">
+	<header>
 		<div class="mobile_title">
 			<a
 				href="'tel:'.urlencode(Language::getText('phone'))"
