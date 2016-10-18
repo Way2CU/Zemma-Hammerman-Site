@@ -15,15 +15,14 @@ Site.Nobe_rotation = function(container, knob, elements ) {
 	self.container = document.querySelector(container);
 	self.knob = document.querySelector(knob);
 	self.elements = document.querySelectorAll(elements);
+	self.radius = self.container.clientHeight / 2;
+	self.container_center = {x: self.radius, y: self.radius};
 	self.handle = false;
 
 	/*
 	 * object initialization
 	 */
 	self._init = function() {
-		self.radius = self.container.clientHeight / 2;
-		self.container_center = {x: self.radius, y: self.radius};
-
 		// create labels around knob
 		for(var i = 0; i < self.elements.length; i++) {
 			var menu_item = document.createElement('span');
@@ -37,21 +36,24 @@ Site.Nobe_rotation = function(container, knob, elements ) {
 			// set text of labels
 			menu_item.innerText = self.elements[i].getAttribute('alt');
 			self.container.appendChild(menu_item);
+
+			// assign touch events to knob element
+			self.knob.addEventListener('touchstart', self.handle_touchstart);
 		}
 	}
 
 	// handle touchstart
-	self.handle_touchstart = function() {
+	self.handle_touchstart = function(event) {
 
 	}
 
 	// handle touchmove
-	self.handle_touchmove = function() {
+	self.handle_touchmove = function(event) {
 
 	}
 
 	// handle touchend
-	self.handle_touchend = function() {
+	self.handle_touchend = function(event) {
 
 	}
 
