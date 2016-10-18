@@ -9,7 +9,7 @@
 // create or use existing site scope
 var Site = Site || {};
 
-Site.Nobe_rotation = function(container, knob, elements ) {
+Site.knob_rotation = function(container, knob, elements ) {
 	var self = this;
 
 	self.container = document.querySelector(container);
@@ -38,7 +38,7 @@ Site.Nobe_rotation = function(container, knob, elements ) {
 			self.container.appendChild(menu_item);
 
 			// assign touch events to knob element
-			self.knob.addEventListener('touchstart', self.handle_touchstart);
+			self.knob.addEventListener('touchmove', self.handle_touchmove);
 		}
 	}
 
@@ -49,7 +49,9 @@ Site.Nobe_rotation = function(container, knob, elements ) {
 
 	// handle touchmove
 	self.handle_touchmove = function(event) {
+		var touch = event.touches[0];
 
+		self.knob.style
 	}
 
 	// handle touchend
@@ -62,5 +64,5 @@ Site.Nobe_rotation = function(container, knob, elements ) {
 }
 
 $(function() {
-	Site.rotate = new Site.Nobe_rotation('div#controls', 'div.knob', 'div.slider img');
+	Site.rotate = new Site.knob_rotation('div#controls', 'div.knob', 'div.slider img');
 })
