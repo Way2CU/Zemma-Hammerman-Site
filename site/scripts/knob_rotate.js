@@ -9,7 +9,7 @@
 // create or use existing site scope
 var Site = Site || {};
 
-Site.knob = function(container, knob, elements ) {
+Site.Knob = function(container, knob, elements ) {
 	var self = this;
 
 	self.container = document.querySelector(container);
@@ -63,5 +63,5 @@ Site.knob = function(container, knob, elements ) {
 }
 
 $(function() {
-	Site.rotate = new Site.knob('div#controls', 'div.knob', 'div.slider img');
+	Site.rotate = new Site.Knob('div#controls', 'div.knob', 'div.slider img');
 })
