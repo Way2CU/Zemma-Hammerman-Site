@@ -1,3 +1,7 @@
 {
-	"/": "home.xml"
+	"/": "home.xml",
+	"/about": "about.xml",
+	"/news": "news.xml",
+	"/projects": "projects.xml",
+	"/contact": "contact.xml"
 }
