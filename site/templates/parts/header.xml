@@ -4,13 +4,13 @@
 
 	<header>
 		<div class="mobile_title">
-			<a
+<!-- 			<a
 				href="'tel:'.urlencode(Language::getText('phone'))"
 				cms:eval="href"
 				class="phone"
 				>
 				<cms:svg file="site-sprite.svg" symbol="phone"/>
-			</a>
+			</a> -->
 
 			<!-- header title -->
 			<cms:if condition="isset($template['title'])">
@@ -29,42 +29,32 @@
 
 		<nav class="mobile_menu">
 			<a
-				class="$section == 'home' ? 'active' : false"
-				href="url_Make('', 'home')"
+				href="URL::make()"
 				cms:eval="href"
-				cms:optional="class"
 				>
 				<cms:text constant="menu_home"/>
 			</a>
 			<a
-				class="$section == 'about' ? 'active' : false"
-				href="url_Make('', 'about')"
+				href="URL::make(array(), 'about.xml')"
 				cms:eval="href"
-				cms:optional="class"
 				>
 				<cms:text constant="menu_about"/>
 			</a>
 			<a
-				class="$section == 'news' ? 'active' : false"
-				href="url_Make('', 'news')"
+				href="URL::make(array(), 'news.xml')"
 				cms:eval="href"
-				cms:optional="class"
 				>
 				<cms:text constant="menu_news"/>
 			</a>
 			<a
-				class="$section == 'projects' ? 'active' : false"
-				href="url_Make('', 'projects')"
+				href="URL::make(array(), 'projects.xml')"
 				cms:eval="href"
-				cms:optional="class"
 				>
 				<cms:text constant="menu_projects"/>
 			</a>
 			<a
-				class="$section == 'contact' ? 'active' : false"
-				href="url_Make('', 'contact')"
+				href="URL::make(array(), 'contact.xml')"
 				cms:eval="href"
-				cms:optional="class"
 				>
 				<cms:text constant="menu_contact"/>
 			</a>
