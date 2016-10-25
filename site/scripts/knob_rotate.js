@@ -23,6 +23,7 @@ Site.Knob = function(container, knob, elements) {
 		x: self.rect.left + (self.rect.width / 2),
 		y: self.rect.top + (self.rect.height / 2)
 	};
+	self.starting_angle = null;
 	self.handle = false;
 
 	/*
@@ -48,6 +49,7 @@ Site.Knob = function(container, knob, elements) {
 
 		// assign move event to knob container element
 		self.knob.addEventListener('touchstart', self.handle_touchstart);
+		self.knob.addEventListener('touchmove', self.handle_touchmove);
 	}
 
 	/*
@@ -60,10 +62,8 @@ Site.Knob = function(container, knob, elements) {
 		var pos_x = touch.pageX - self.center.x;
 		var pos_y = touch.pageY - self.center.y;
 
-		var radian = Math.atan2(pos_y, pos_x) + (Math.PI / 2);
-		radian += 'rad';
-		self.knob.style.transform = 'translate(-50%, -50%) rotate('+radian+')';
-
+		self.starting_angle = Math.atan2(pos_y, pos_x) + (Math.PI / 2);
+		self.knob.style.transform = 'translate(-50%, -50%) rotate('+self.starting_angle+'rad)';
 	}
 
 	/*
@@ -72,7 +72,12 @@ Site.Knob = function(container, knob, elements) {
 	 * @param object event.
 	 */
 	self.handle_touchmove = function(event) {
+		var touch = event.touches[0];
+		var pos_x = touch.pageX - self.center.x;
+		var pos_y = touch.pageY - self.center.y;
 
+		var radian = Math.atan2(pos_y, pos_x) + (Math.PI / 2) - self.starting_angle;
+		self.knob.style.transform = 'translate(-50%, -50%) rotate('+radian+'rad)';
 	}
 
 	/*
