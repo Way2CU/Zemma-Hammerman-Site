@@ -23,7 +23,8 @@ Site.Knob = function(container, knob, elements) {
 		x: self.rect.left + (self.rect.width / 2),
 		y: self.rect.top + (self.rect.height / 2)
 	};
-	self.starting_angle = null;
+	self.global_angle = 0;
+	self.relative_angle = null;
 	self.handle = false;
 
 	/*
@@ -50,6 +51,7 @@ Site.Knob = function(container, knob, elements) {
 		// assign move event to knob container element
 		self.knob.addEventListener('touchstart', self.handle_touchstart);
 		self.knob.addEventListener('touchmove', self.handle_touchmove);
+		self.knob.addEventListener('touchend', self.handle_touchend);
 	}
 
 	/*
@@ -58,12 +60,7 @@ Site.Knob = function(container, knob, elements) {
 	 * @param object event.
 	 */
 	self.handle_touchstart = function(event) {
-		var touch = event.touches[0];
-		var pos_x = touch.pageX - self.center.x;
-		var pos_y = touch.pageY - self.center.y;
-
-		self.starting_angle = Math.atan2(pos_y, pos_x) + (Math.PI / 2);
-		self.knob.style.transform = 'translate(-50%, -50%) rotate('+self.starting_angle+'rad)';
+		self.relative_angle = 0;
 	}
 
 	/*
@@ -76,8 +73,8 @@ Site.Knob = function(container, knob, elements) {
 		var pos_x = touch.pageX - self.center.x;
 		var pos_y = touch.pageY - self.center.y;
 
-		var radian = Math.atan2(pos_y, pos_x) + (Math.PI / 2) - self.starting_angle;
-		self.knob.style.transform = 'translate(-50%, -50%) rotate('+radian+'rad)';
+		self.relative_angle = Math.atan2(pos_y, pos_x) + (Math.PI / 2) + self.global_angle;
+		self.knob.style.transform = 'translate(-50%, -50%) rotate('+self.relative_angle+'rad)';
 	}
 
 	/*
@@ -86,7 +83,7 @@ Site.Knob = function(container, knob, elements) {
 	 * @param object event.
 	 */
 	self.handle_touchend = function(event) {
-
+		self.global_angle += self.relative_angle;
 	}
 
 	// finish object initialization
