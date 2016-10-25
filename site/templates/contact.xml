@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document SYSTEM "../units/schema/language.dtd">
+<document>
+	<cms:var name="_DOCTYPE"/>
+	<html lang="$language" dir="$language_rtl ? 'rtl' : 'ltr'" cms:eval="lang,dir">
+		<head>
+			<title><cms:text constant="site_title"/></title>
+			<cms:collection  include="page_control"/>
+			<cms:module name="head_tag" action="print_tag"/>
+		</head>
+
+		<body class="contact">
+			<!-- Top section of the site -->
+			<cms:template file="parts/header.xml">
+				<param name="title" value="menu_contact"/>
+			</cms:template>
+
+			<section>
+
+				<img
+					src="_BASEURL.'/site/images/logo-trans-grey.png'"
+					alt="site_title"
+					cms:constant="alt"
+					cms:eval="src"
+					 />
+				<h4><cms:text constant="call_us_today" /></h4>
+					<a
+						href="'tel:'.urlencode(Language::get_Text('phone2'))"
+						cms:eval="href"
+						class="phone action"
+						>
+						<cms:text constant="phone2" />
+						<cms:svg file="site-sprite.svg" symbol="phone"/>
+					</a>
+					<div id="form_container">
+						<h4><cms:text constant="form_text" /></h4>
+						<cms:module
+							name="contact_form"
+							action="show"
+							text_id="contact_form"
+						/>
+					</div>
+			</section>
+		</body>
+	</html>
+</document>
