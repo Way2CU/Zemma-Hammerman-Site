@@ -10,7 +10,7 @@
 			<cms:module name="head_tag" action="print_tag"/>
 		</head>
 
-		<body class="$section" cms:eval="class">
+		<body class="home">
 			<!-- Top section of the site -->
 			<cms:template file="parts/header.xml"/>
 
