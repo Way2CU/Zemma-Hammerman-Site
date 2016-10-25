@@ -30,6 +30,8 @@
 					<div class="knob"></div>
 				</div>
 			</section>
+
+			<cms:template file="parts/footer.xml"/>
 		</body>
 	</html>
 </document>
