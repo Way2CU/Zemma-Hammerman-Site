@@ -4,13 +4,13 @@
 
 	<header>
 		<div class="mobile_title">
-<!-- 			<a
-				href="'tel:'.urlencode(Language::getText('phone'))"
+			<a
+				href="'tel:'.urlencode(Language::get_Text('phone'))"
 				cms:eval="href"
 				class="phone"
 				>
 				<cms:svg file="site-sprite.svg" symbol="phone"/>
-			</a> -->
+			</a>
 
 			<!-- header title -->
 			<cms:if condition="isset($template['title'])">
