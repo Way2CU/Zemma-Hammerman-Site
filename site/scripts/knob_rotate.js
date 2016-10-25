@@ -17,9 +17,6 @@ Site.Knob = function(container, knob, elements) {
 	self.elements = document.querySelectorAll(elements);
 	self.radius_x = self.container.clientWidth / 2;
 	self.radius_y = self.container.clientHeight / 2;
-	self.knob_radius_x = self.knob.clientWidth / 2;
-	self.knob_radius_y = self.knob.clientHeight / 2;
-	self.knob_center = {x: self.knob_radius_x, y: self.knob_radius_y};
 	self.container_center = {x: self.radius_x, y: self.radius_y};
 	self.rect = self.container.getBoundingClientRect();
 	self.center = {
@@ -75,13 +72,7 @@ Site.Knob = function(container, knob, elements) {
 	 * @param object event.
 	 */
 	self.handle_touchmove = function(event) {
-		var touch = event.touches[0];
-		var pos_x = touch.pageX - self.center.x;
-		var pos_y = touch.pageY - self.center.y;
 
-		var radian = Math.atan2(pos_y, pos_x) + (Math.PI / 2);
-		radian += 'rad';
-		self.knob.style.transform = 'translate(-50%, -50%) rotate('+radian+')';
 	}
 
 	/*
