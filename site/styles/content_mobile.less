@@ -100,3 +100,105 @@ div#controls div.knob {
 	border-radius: 50%;
 	transform: translate(-50%, -50%);
 }
+
+/*
+*Contact Page
+*/
+body.contact section {
+	text-align: center;
+}
+
+body.contact section img {
+	padding-top: 80px;
+	display: block;
+	width: 80%;
+	margin: 0 auto;
+}
+
+body.contact section h4 {
+	text-align: center;
+}
+
+body.contact section > h4:before {
+	content: "";
+	display: block;
+	width: 80%;
+	height: 1px;
+	background-color: black;
+	margin: 1em auto;
+}
+body.contact section a {
+	font-size: 1.5em;
+	text-align: center;
+}
+
+body.contact section a svg {
+	width: 35px;
+	height: 35px;
+	display: inline-block;
+	vertical-align: middle;
+	padding-right: 0.5em;
+	padding-bottom: 5px;
+	fill: white;
+}
+
+div#form_container {
+	display: block;
+	width: 100%;
+}
+
+div#form_container form {
+	display: block;
+	width: 90%;
+	margin: 0 auto;
+}
+
+div#form_container form label {
+	display: block;
+	width: 100%;
+	padding-bottom: 0.5em;
+	box-sizing: border-box;
+}
+
+div#form_container form label select,
+div#form_container form label input {
+	padding: 1em;
+	border: 1px solid @color_grey;
+	display: block;
+	box-sizing: border-box;
+	width: 100%;
+}
+
+div#form_container form label span {
+	display: block;
+	text-align: right;
+}
+
+div#form_container form label.checkbox {
+	position: relative;
+}
+
+div#form_container form label.checkbox span {
+	font-size: 1em;
+	display: block;
+	text-align: right;
+	padding-right: 25px;
+}
+
+div#form_container form label.checkbox input {
+	position: absolute;
+	right: 0;
+	top: 40%;
+	transform: translatey(-50%);
+	width: 20px;
+	height: 15px;
+	display: block;
+}
+
+div#form_container div.controls {
+	margin-bottom: 0.5em;
+}
+
+div#form_container div.controls button{
+	padding: 0.7em 3.5em;
+}
