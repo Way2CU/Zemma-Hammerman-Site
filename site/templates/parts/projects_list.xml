@@ -21,6 +21,7 @@
 		<a
 			href="URL::make(array('name' => $params['id']))"
 			cms:eval="href"
+			class="action"
 			>
 			<cms:var param="name" multilanguage="yes"/>
 		</a>
