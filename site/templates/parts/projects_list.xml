@@ -19,7 +19,7 @@
 
 		<!-- -->
 		<a
-			href="URL::make(array('view' => $params['id']))"
+			href="URL::make(array('name' => $params['id']))"
 			cms:eval="href"
 			>
 			<cms:var param="name" multilanguage="yes"/>

@@ -3,6 +3,6 @@
 	"/about": "about.xml",
 	"/news": "news.xml",
 	"/projects": "projects.xml",
-	"/projects/{view}": "view.xml",
+	"/projects/{name}": "view.xml",
 	"/contact": "contact.xml"
 }
