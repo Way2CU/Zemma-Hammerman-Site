@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document SYSTEM "../units/schema/language.dtd">
+<document>
+	<cms:var name="_DOCTYPE"/>
+	<html lang="$language" dir="$language_rtl ? 'rtl' : 'ltr'" cms:eval="lang,dir">
+		<head>
+			<title><cms:text constant="site_title"/></title>
+			<cms:collection  include="page_control"/>
+			<cms:script src="_BASEURL.'/site/scripts/knob_rotate.js'" cms:eval="src"/>
+			<cms:module name="head_tag" action="print_tag"/>
+		</head>
+
+		<body class="projects">
+
+			<!-- header -->
+			<cms:template file="parts/header.xml">
+				<param name="title" value="menu_projects"/>
+			</cms:template>
+			<!-- end-header -->
+
+			<!-- shop_list_projects -->
+			<section>
+				<cms:module
+					name="shop"
+					action="show_item_list"
+					order_by="priority"
+					template="parts/projects_list.xml"
+				/>
+			</section>
+
+			<!-- footer -->
+			<cms:template file="parts/footer.xml"/>
+		</body>
+	</html>
+</document>
