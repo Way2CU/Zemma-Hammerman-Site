@@ -5,7 +5,7 @@
 			name="gallery"
 			action="show_image"
 			text_id="img_title"
-			group_id="$params['id']"
+			group_id="$params['gallery']"
 			template="parts/project_title_image.xml"
 			cms:eval="group_id"
 			/>
