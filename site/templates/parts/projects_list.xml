@@ -1,12 +1,7 @@
 <document>
 	<div>
 		<!-- spesific image title with text_id -->
-<!-- 		<cms:module
-			name="gallery"
-			action="show_image"
-			text_id="img_title"
-			template="parts/project_title_image.xml"
-			/> -->
+
 		<!-- shop item group thumbnail -->
 		<img
 			class="image"
@@ -16,8 +11,9 @@
 		/>
 		<!-- -->
 		<a
-			href="URL::make(array('projects' => $params['id']))"
+			href="URL::make(array('view' => $params['uid']))"
 			cms:eval="href"
+			class="action"
 			>
 			<cms:var param="name" multilanguage="yes"/>
 		</a>
