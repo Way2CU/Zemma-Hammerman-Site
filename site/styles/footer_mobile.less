@@ -13,11 +13,35 @@ footer {
 footer nav.footer_menu a {
 	color: white;
 	text-decoration: none;
-	width: calc(~'32% - 1px');
+	padding: 1em;
 	display: inline-block;
 	vertical-align: middle;
 	position: relative;
-	border-left: 1px solid white;
 	box-sizing: border-box;
+	position: relative;
 }
 
+footer nav.footer_menu a:after {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 95%;
+	background-color: white;
+	width: 1px;
+	height: 50%;
+}
+
+footer nav.footer_menu a:nth-child(3):after,
+footer nav.footer_menu a:nth-child(5):after {
+	display: none;
+}
+
+
+footer div.copyright.light a,
+footer div.copyright.light {
+	color: white;
+	background-position: calc(~'50% - 100px') center;
+	padding-left: 0;
+}
