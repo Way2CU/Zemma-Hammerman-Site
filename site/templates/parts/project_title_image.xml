@@ -1,0 +1,8 @@
+<document>
+	<img
+		class="title"
+		src="$params['image']"
+		alt="$params['title'][$language]"
+		cms:eval="src,alt"
+		/>
+</document>

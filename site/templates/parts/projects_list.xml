@@ -1,22 +1,25 @@
 <document>
 	<div>
-		<!-- spesific image title with text_id -->
-<!-- 		<cms:module
+		<!-- show specific img title -->
+		<cms:module
 			name="gallery"
 			action="show_image"
 			text_id="img_title"
+			group_id="$params['id']"
 			template="parts/project_title_image.xml"
-			/> -->
+			cms:eval="group_id"
+			/>
+
 		<!-- shop item group thumbnail -->
 		<img
-			class="image"
 			src="gallery::getGroupThumbnailById($params['gallery'], null, 300, Thumbnail::CONSTRAIN_HEIGHT)"
 			alt="$params['name'][$language]"
 			cms:eval="src,alt"
-		/>
+			/>
+
 		<!-- -->
 		<a
-			href="URL::make(array('projects' => $params['id']))"
+			href="URL::make(array('view' => $params['id']))"
 			cms:eval="href"
 			>
 			<cms:var param="name" multilanguage="yes"/>
