@@ -26,28 +26,35 @@ Site.Knob = function(container, knob, elements) {
 	self.start_angle = 0;
 	self.end_angle = 0;
 	self.knob_angle = 0;
-	self.handle = false;
 
 	/*
 	 * object initialization
 	 */
 	self._init = function() {
+		var angle = -Math.PI / 2;
+		var angle_increment = (2 * Math.PI) / self.elements.length;
+
 		// create labels around knob
 		for(var i = 0; i < self.elements.length; i++) {
 			var menu_item = document.createElement('span');
 			menu_item.classList.add('control');
 
+			var label_item = document.createElement('span');
+			menu_item.appendChild(label_item);
+
 			menu_item.style.position = 'absolute';
-			menu_item.style.left = self.container_center.x + self.radius_x * Math.cos(2 * Math.PI * i / self.elements.length) + "px";
-			menu_item.style.top = self.container_center.y + self.radius_y * Math.sin(2 * Math.PI * i / self.elements.length) + "px";
+			menu_item.style.left = self.container_center.x + self.radius_x * Math.cos(angle) + 'px';
+			menu_item.style.top = self.container_center.y + self.radius_y * Math.sin(angle) + 'px';
 			menu_item.style.transform = "translate(-50%, -50%)";
 
+			angle += angle_increment;
+
 			// set text of labels
-			menu_item.innerText = self.elements[i].getAttribute('alt');
+			label_item.innerText = self.elements[i].getAttribute('alt');
 			self.container.appendChild(menu_item);
 		}
 
-		// assign move event to knob container element
+		// assign touch events to knob element
 		self.knob.addEventListener('touchstart', self.handle_touchstart);
 		self.knob.addEventListener('touchmove', self.handle_touchmove);
 		self.knob.addEventListener('touchend', self.handle_touchend);
@@ -96,7 +103,12 @@ Site.Knob = function(container, knob, elements) {
 		var final_angle = self.knob_angle + (self.current_angle - self.start_angle);
 		var project_index = Math.round(final_angle / angle_between_projects);
 
-		self.knob_angle = project_index * angle_between_projects
+		if(project_index > self.elements.length) {
+			project_index = 1;
+		}
+
+		Site.home_page_menu.showPage(project_index);
+		self.knob_angle = project_index * angle_between_projects;
 		self.update_knob_rotation(self.knob_angle);
 	}
 

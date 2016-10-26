@@ -27,7 +27,7 @@ footer nav.footer_menu a:after {
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
-	right: 100%;
+	right: calc(~'100% - 2px');
 	background-color: white;
 	width: 1px;
 	height: 50%;
@@ -38,10 +38,12 @@ footer nav.footer_menu a:nth-child(5):after {
 	display: none;
 }
 
+footer div.copyright {
+	display: inline-block;
+	color: @color_background;
+}
 
 footer div.copyright.light a,
 footer div.copyright.light {
 	color: white;
-	background-position: calc(~'50% - 100px') center;
-	padding-left: 0;
 }

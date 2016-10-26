@@ -19,7 +19,6 @@
 					name="shop"
 					action="show_item_list"
 					order_by="priority"
-					group="slider_images"
 					template="parts/slider_images.xml"
 					/>
 			</div>
