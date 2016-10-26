@@ -19,9 +19,9 @@
 			<cms:module
 				name="shop"
 				action="show_item"
-				text_id="$_REQUEST['name']"
+				uid="$_REQUEST['name']"
 				template="parts/about_project.xml"
-				cms:eval="text_id"
+				cms:eval="uid"
 			/>
 			<!--  Footer nav menu -->
 
