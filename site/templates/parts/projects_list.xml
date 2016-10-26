@@ -19,7 +19,7 @@
 
 		<!-- -->
 		<a
-			href="URL::make(array('name' => $params['id']))"
+			href="URL::make(array('name' => $params['uid']))"
 			cms:eval="href"
 			class="action"
 			>
