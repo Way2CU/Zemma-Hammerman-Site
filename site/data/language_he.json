@@ -1,10 +1,15 @@
 {
 	"site_title": "Zemah Hammerman",
+	"copyright_holder": "Developed by <a href=\"http://way2cu.com\" target=\"_blank\">Way2CU</a>",
+	"copyright_text": "All rights reserved.",
 	"home_page_title": "מחפשים דירה חדשה?",
 	"menu_home": "עמוד הבית",
 	"menu_about": "אודותינו",
 	"menu_news": "חדשות ועדכונים",
 	"menu_projects": "כל הפרוייקטים",
 	"menu_contact": "צור קשר",
-	"phone": "09-7654321"
+	"phone": "09-7654321",
+	"phone2" : "3066*",
+	"call_us_today" : "לפרטים נוספים התקשרו אלינו עוד היום:",
+	"form_text" : "מעוניינים שנחזור אליכם? מלאו את הטופס:"
 }

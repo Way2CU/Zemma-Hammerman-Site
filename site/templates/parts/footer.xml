@@ -1,0 +1,41 @@
+<document>
+	<footer>
+		<nav class="footer_menu">
+			<a
+				href="URL::make()"
+				cms:eval="href"
+				>
+				<cms:text constant="menu_home"/>
+			</a>
+			<a
+				href="URL::make(array(), 'about.xml')"
+				cms:eval="href"
+				>
+				<cms:text constant="menu_about"/>
+			</a>
+			<a
+				href="URL::make(array(), 'news.xml')"
+				cms:eval="href"
+				>
+				<cms:text constant="menu_news"/>
+			</a>
+			<a
+				href="URL::make(array(), 'projects.xml')"
+				cms:eval="href"
+				>
+				<cms:text constant="menu_projects"/>
+			</a>
+			<a
+				href="URL::make(array(), 'contact.xml')"
+				cms:eval="href"
+				>
+				<cms:text constant="menu_contact"/>
+			</a>
+		</nav>
+		<cms:template file="stock/copyright.xml">
+			<param name="holder" value="copyright_holder"/>
+			<param name="text" value="copyright_text"/>
+			<param name="light" value=""/>
+		</cms:template>
+	</footer>
+</document>
