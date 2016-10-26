@@ -14,6 +14,9 @@
 			<cms:template file="parts/header.xml">
 				<param name="title" value="menu_about"/>
 			</cms:template>
+
+			<!-- Footer -->
+			<cms:template file="parts/footer.xml"/>
 		</body>
 	</html>
 </document>
