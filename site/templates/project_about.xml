@@ -21,14 +21,13 @@
 				cms:eval="uid"
 			/>
 			<!--  End of header -->
-			<section style="'background-image: url('.$params['image'].');'" cms:eval="style">
-				<!--  thumnail project for background -->
-				<img
-					src="gallery::getGroupThumbnailById($params['gallery'], null, 300, Thumbnail::CONSTRAIN_HEIGHT)"
-					alt="$params['name'][$language]"
-					cms:eval="src,alt"
-				/>
 
+
+				<!--  thumbnail project for background -->
+			<section
+				style="'background-image: url('.gallery::getGroupThumbnailById($params['id'], null, 500, Thumbnail::CONSTRAIN_WIDTH) .');'"
+				cms:eval="style"
+				>
 
 				<!--  about article -->
 				<cms:module

@@ -1,3 +1,42 @@
-<docuemnt>
-	<h2>suck my balls</h2>
-</docuemnt>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document SYSTEM "../units/schema/language.dtd">
+<document>
+	<cms:var name="_DOCTYPE"/>
+	<html lang="$language" dir="$language_rtl ? 'rtl' : 'ltr'" cms:eval="lang,dir">
+		<head>
+			<title><cms:text constant="site_title"/></title>
+			<cms:collection  include="page_control"/>
+			<cms:module name="head_tag" action="print_tag"/>
+		</head>
+
+		<body>
+
+			<!--  Header of the site -->
+	<!-- <cms:template file="parts/header.xml" /> -->
+			<section>
+				<cms:module
+					name="shop"
+					action="show_item"
+					uid="$_REQUEST['name']"
+					template="parts/header.xml"
+					cms:eval="uid"
+					/>
+				<!--  End of header -->
+
+				<cms:module
+					name="shop"
+					action="show_image_list"
+					group="$_REQUEST['name']"
+					template="parts/gallery_images.xml"
+					cms:eval="group"
+					/>
+
+					<!-- Project nav menu -->
+				<cms:template file="parts/project_footer_nav.xml"/>
+			</section>
+
+			<!-- Footer -->
+			<cms:template file="parts/footer.xml"/>
+		</body>
+	</html>
+</document>
