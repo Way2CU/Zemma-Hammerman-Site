@@ -24,11 +24,11 @@
 				<!--  End of header -->
 
 				<cms:module
-					name="shop"
+					name="gallery"
 					action="show_image_list"
-					group="$_REQUEST['name']"
+					group="achziv"
 					template="parts/gallery_images.xml"
-					cms:eval="group"
+
 					/>
 
 					<!-- Project nav menu -->

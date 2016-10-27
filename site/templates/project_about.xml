@@ -22,25 +22,17 @@
 			/>
 			<!--  End of header -->
 
+			<!--  about article -->
+			<cms:module
+				name="shop"
+				action="show_item"
+				uid="$_REQUEST['name']"
+				template="parts/information.xml"
+				cms:eval="uid"
+			/>
 
-				<!--  thumbnail project for background -->
-			<section
-				style="'background-image: url('.gallery::getGroupThumbnailById($params['id'], null, 500, Thumbnail::CONSTRAIN_WIDTH) .');'"
-				cms:eval="style"
-				>
-
-				<!--  about article -->
-				<cms:module
-					name="shop"
-					action="show_item"
-					uid="$_REQUEST['name']"
-					template="parts/about_project.xml"
-					cms:eval="uid"
-				/>
-
-				<!-- Project nav menu -->
-				<cms:template file="parts/project_footer_nav.xml"/>
-			</section>
+			<!-- Project nav menu -->
+			<cms:template file="parts/project_footer_nav.xml"/>
 
 			<!-- Footer -->
 			<cms:template file="parts/footer.xml"/>

@@ -134,10 +134,10 @@ div#controls div.knob {
 
 body.contact section {
 	text-align: center;
+	padding: 0.5em;
 }
 
 body.contact section img {
-	padding-top: 80px;
 	display: block;
 	width: 80%;
 	margin: 0 auto;
@@ -223,10 +223,6 @@ div#form_container form label.checkbox input {
 	display: block;
 }
 
-div#form_container div.controls {
-	margin-bottom: 0.5em;
-}
-
 div#form_container div.controls button{
 	padding: 0.7em 3.5em;
 }
@@ -237,8 +233,7 @@ div#form_container div.controls button{
 
 .projects section {
 	text-align: center;
-	padding: 0 0.5em;
-	padding-top: 100px;
+	padding: 0.5em;
 }
 
 .projects section div {
@@ -303,7 +298,40 @@ nav#project_nav a.phone svg {
 
 .about section {
 	background-repeat: no-repeat;
-	background:  -webkit-linear-gradient(to bottom,white,transperent);
-	background:  -moz-linear-gradient(45deg,#c2cacf,white,#c2cacf);
-	background:  linear-gradient(45deg,#c2cacf,white,#c2cacf);
+	position: relative;
+	padding: 1em;
+}
+
+.about section:before {
+	content: " ";
+	display: block;
+	width: 100%;
+	position: absolute;
+	top: 300px;
+	left: 0;
+	right: 0;
+	background: linear-gradient(0deg, @color_background, transparent);
+	height: 200px;
+	z-index: 0;
+}
+
+.about section article {
+	background-color: fade(@color_background, 90%);
+	display: block;
+	margin: 0 auto;
+	width: 90%;
+	position: relative;
+	z-index: 1;
+	box-sizing: border-box;
+	padding: 0.5em;
+	box-shadow: 0px 0px 2px 0px @color_bright_grey;
+}
+
+.about section article h2 {
+	color: @color_text;
+}
+
+.about section article p:first-of-type,
+.about section article p:last-of-type {
+	margin: 0;
 }
