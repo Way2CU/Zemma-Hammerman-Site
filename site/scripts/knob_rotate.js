@@ -45,9 +45,13 @@ Site.Knob = function(container, knob, elements) {
 			var x = Math.cos(angle);
 			var y = Math.sin(angle);
 
-			if(x < 0)
-				label_item.classList.add('right'); else
+			if(self.container_center.x < (self.container_center.x + self.radius_x * x)) {
 				label_item.classList.add('left');
+			} else if(self.container_center.x > (self.container_center.x + self.radius_x * x)) {
+				label_item.classList.add('right');
+			} else {
+				label_item.classList.add('center');
+			}
 
 			menu_item.style.position = 'absolute';
 			menu_item.style.left = self.container_center.x + self.radius_x * x + 'px';
