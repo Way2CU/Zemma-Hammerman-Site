@@ -17,13 +17,14 @@
 			cms:eval="src,alt"
 			/>
 
-		<!-- -->
+		<!-- link to project_about page -->
 		<a
-			href="URL::make(array('name' => $params['uid']))"
+			href="URL::make(array('name' => $params['uid']), 'project_about.xml')"
 			cms:eval="href"
 			class="action"
 			>
 			<cms:var param="name" multilanguage="yes"/>
 		</a>
+
 	</div>
 </document>
