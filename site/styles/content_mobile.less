@@ -237,3 +237,42 @@ div#form_container div.controls button{
 	display: inline-block;
 	margin: 0.5em auto;
 }
+
+/*
+*Projects nav
+*/
+
+nav#project_nav {
+	display: block;
+	width: 100%;
+	text-align: center;
+	background-color: @color_bright_grey;
+	padding: 1em 0;
+}
+
+nav#project_nav a {
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+	width: calc(~'100% / 6.3');
+	text-decoration: none;
+	color: @color_grey;
+}
+
+nav#project_nav a svg {
+	width: 1.5em;
+	height: 1.5em;
+	fill: @color_grey;
+	display: block;
+	margin: 0 auto;
+}
+
+nav#project_nav a.phone svg {
+	border: 1px solid @color_grey;
+	border-radius: 100%;
+	background:  -webkit-linear-gradient(45deg,#c2cacf,white,#c2cacf);
+	background:  -moz-linear-gradient(45deg,#c2cacf,white,#c2cacf);
+	background:  linear-gradient(45deg,#c2cacf,white,#c2cacf);
+	padding: 5px;
+}
+
