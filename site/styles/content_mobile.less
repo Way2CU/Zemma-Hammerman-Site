@@ -81,12 +81,20 @@ div#controls span.control:before {
 	transition: all 0.3s;
 }
 
-div#controls span.control > span {
+div#controls span.control > span.left {
 	position: absolute;
-	left: 50%;
-	top: -20px;
-	width: 100px;
-	transform: translatex(-50%);
+	left: 100%;
+	top: 50%;
+	width: 70px;
+	transform: translatey(-50%);
+}
+
+div#controls span.control > span.right {
+	position: absolute;
+	right: 100%;
+	top: 50%;
+	width: 70px;
+	transform: translatey(-50%);
 }
 
 div#controls span.control.active:before {
