@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document SYSTEM "../units/schema/language.dtd">
+<document>
+	<cms:var name="_DOCTYPE"/>
+	<html lang="$language" dir="$language_rtl ? 'rtl' : 'ltr'" cms:eval="lang,dir">
+		<head>
+			<title><cms:text constant="site_title"/></title>
+			<cms:collection  include="page_control"/>
+			<cms:module name="head_tag" action="print_tag"/>
+		</head>
+
+		<body class="about">
+
+			<!--  Header of the site -->
+	<!-- <cms:template file="parts/header.xml" /> -->
+			<cms:module
+				name="shop"
+				action="show_item"
+				uid="$_REQUEST['name']"
+				template="parts/header.xml"
+				cms:eval="uid"
+			/>
+			<!--  End of header -->
+			<section style="'background-image: url('.$params['image'].');'" cms:eval="style">
+				<!--  thumnail project for background -->
+				<img
+					src="gallery::getGroupThumbnailById($params['gallery'], null, 300, Thumbnail::CONSTRAIN_HEIGHT)"
+					alt="$params['name'][$language]"
+					cms:eval="src,alt"
+				/>
+
+
+				<!--  about article -->
+				<cms:module
+					name="shop"
+					action="show_item"
+					uid="$_REQUEST['name']"
+					template="parts/about_project.xml"
+					cms:eval="uid"
+				/>
+
+				<!-- Project nav menu -->
+				<cms:template file="parts/project_footer_nav.xml"/>
+			</section>
+
+			<!-- Footer -->
+			<cms:template file="parts/footer.xml"/>
+		</body>
+	</html>
+</document>

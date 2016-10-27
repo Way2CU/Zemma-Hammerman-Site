@@ -19,6 +19,9 @@
 				</h1>
 			</cms:if>
 
+			<!-- project header -->
+			<h1><cms:var param="name" multilanguage="yes"/></h1>
+
 			<a
 				href="javascript:void(0)"
 				class="menu"
