@@ -11,9 +11,7 @@
 
 		<body class="about">
 			<!--  Header of the site -->
-			<cms:template file="parts/header.xml">
-				<param name="title" value="menu_contact"/>
-			</cms:template>
+			<cms:template file="parts/header.xml"/>
 
 			<!--  about article -->
 			<cms:module

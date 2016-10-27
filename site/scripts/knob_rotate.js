@@ -42,9 +42,16 @@ Site.Knob = function(container, knob, elements) {
 			var label_item = document.createElement('span');
 			menu_item.appendChild(label_item);
 
+			var x = Math.cos(angle);
+			var y = Math.sin(angle);
+
+			if(x < 0)
+				label_item.classList.add('right'); else
+				label_item.classList.add('left');
+
 			menu_item.style.position = 'absolute';
-			menu_item.style.left = self.container_center.x + self.radius_x * Math.cos(angle) + 'px';
-			menu_item.style.top = self.container_center.y + self.radius_y * Math.sin(angle) + 'px';
+			menu_item.style.left = self.container_center.x + self.radius_x * x + 'px';
+			menu_item.style.top = self.container_center.y + self.radius_y * y + 'px';
 			menu_item.style.transform = "translate(-50%, -50%)";
 
 			angle += angle_increment;
@@ -76,6 +83,9 @@ Site.Knob = function(container, knob, elements) {
 	 * @param object event.
 	 */
 	self.handle_touchstart = function(event) {
+		// prevent page from scrolling
+		event.preventDefault();
+
 		var touch = event.touches[0];
 		self.start_angle = self.calculate_angle(touch.pageX, touch.pageY);
 	}
@@ -91,6 +101,8 @@ Site.Knob = function(container, knob, elements) {
 
 		var angle = self.knob_angle + (self.current_angle - self.start_angle);
 		self.update_knob_rotation(angle);
+
+		return true;
 	}
 
 	/*
