@@ -53,13 +53,12 @@ section h2 {
 }
 
 div#controls {
-	position: relative;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 2em;
-	margin-bottom: 2em;
-	width: 250px;
-	height: 250px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 200px;
+	height: 200px;
 }
 
 div#controls span.control {
@@ -83,19 +82,22 @@ div#controls span.control:before {
 
 div#controls span.control > span.left {
 	position: absolute;
+	padding-left: 0.2em;
 	left: 100%;
 	top: 50%;
-	width: 70px;
 	transform: translatey(-50%);
+	width: 60px;
 }
 
 div#controls span.control > span.right {
 	position: absolute;
+	padding-right: 0.2em;
 	right: 100%;
 	top: 50%;
-	width: 70px;
 	transform: translatey(-50%);
+	width: 60px;
 }
+
 
 div#controls span.control.active:before {
 	background-color: @color_red;
@@ -108,9 +110,9 @@ div#controls div.knob {
 	background-image: url(../images/nobe.png);
 	background-repeat: no-repeat;
 	background-position: center center;
-	background-size: 150px 150px;
-	width: 150px;
-	height: 150px;
+	background-size: 140px 140px;
+	width: 140px;
+	height: 140px;
 	border-radius: 50%;
 	transform: translate(-50%, -50%);
 }
