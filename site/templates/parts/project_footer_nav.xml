@@ -1,0 +1,57 @@
+<document>
+	<nav id="project_nav">
+		<!-- svg link to projects_contact -->
+		<a
+			href="URL::make(array('name' => $params['uid']), 'project_form.xml')"
+			cms:eval="href"
+		>
+		<cms:svg file="site-sprite.svg" symbol="form"/>
+		<cms:text constant="project_menu_contact" />
+		</a>
+
+		<!-- svg link to projects_location -->
+		<a
+			href="URL::make(array('name' => $params['uid']), 'project_location.xml')"
+			cms:eval="href"
+		>
+		<cms:svg file="site-sprite.svg" symbol="map"/>
+		<cms:text constant="project_menu_location" />
+		</a>
+
+		<!-- svg link to projects_about -->
+		<a
+			href="URL::make(array('name' => $params['uid']), 'project_about.xml')"
+			cms:eval="href"
+		>
+		<cms:svg file="site-sprite.svg" symbol="about"/>
+		<cms:text constant="project_menu_about" />
+		</a>
+
+		<!-- svg link to projects_gallery -->
+		<a
+			href="URL::make(array('name' => $params['uid']), 'project_gallery.xml')"
+			cms:eval="href"
+		>
+		<cms:svg file="site-sprite.svg" symbol="gallery"/>
+		<cms:text constant="project_menu_gallery" />
+		</a>
+
+		<!-- svg link to projects_videos -->
+		<a
+			href="URL::make(array('name' => $params['uid']), 'project_videos.xml')"
+			cms:eval="href"
+		>
+		<cms:svg file="site-sprite.svg" symbol="video"/>
+		<cms:text constant="project_menu_videos" />
+		</a>
+
+		<!-- svg link to phone -->
+		<a
+			href="'tel:'.urlencode(Language::get_Text('phone'))"
+			cms:eval="href"
+			class="phone"
+			>
+			<cms:svg file="site-sprite.svg" symbol="phone"/>
+		</a>
+	</nav>
+</document>
