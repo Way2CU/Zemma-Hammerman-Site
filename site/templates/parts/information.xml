@@ -3,6 +3,8 @@
 		style="'background-image: url('.gallery::getGroupThumbnailById($params['gallery'], null, 500, Thumbnail::CONSTRAIN_WIDTH) .');'"
 		cms:eval="style"
 		>
-		<cms:markdown param="description" multilanguage="yes" />
+		<article>
+			<cms:markdown param="description" multilanguage="yes" />
+		</article>
 	</section>
 </document>
