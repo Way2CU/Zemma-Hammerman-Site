@@ -26,7 +26,7 @@
 				<cms:module
 					name="gallery"
 					action="show_image_list"
-					group="achziv"
+					group="$_REQUEST['name']"
 					template="parts/gallery_images.xml"
 
 					/>
