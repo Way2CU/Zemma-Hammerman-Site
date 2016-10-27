@@ -12,7 +12,6 @@
 		<body class="about">
 
 			<!--  Header of the site -->
-	<!-- <cms:template file="parts/header.xml" /> -->
 			<cms:module
 				name="shop"
 				action="show_item"
@@ -29,7 +28,7 @@
 				uid="$_REQUEST['name']"
 				template="parts/information.xml"
 				cms:eval="uid"
-			/>
+				/>
 
 			<!-- Project nav menu -->
 			<cms:template file="parts/project_footer_nav.xml"/>

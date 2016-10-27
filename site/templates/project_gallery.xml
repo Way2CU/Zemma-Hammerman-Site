@@ -12,7 +12,6 @@
 		<body>
 
 			<!--  Header of the site -->
-	<!-- <cms:template file="parts/header.xml" /> -->
 			<section>
 				<cms:module
 					name="shop"
@@ -24,11 +23,11 @@
 				<!--  End of header -->
 
 				<cms:module
-					name="gallery"
-					action="show_image_list"
-					group="achziv"
-					template="parts/gallery_images.xml"
-
+					name="shop"
+					action="show_item"
+					uid="$_REQUEST['name']"
+					template="parts/information.xml"
+					cms:eval="uid"
 					/>
 
 					<!-- Project nav menu -->
