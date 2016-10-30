@@ -30,7 +30,7 @@
 					cms:eval="uid"
 				/>
 
-					<!-- Project nav menu -->
+				<!-- Project nav menu -->
 				<cms:template file="parts/project_footer_nav.xml"/>
 			</section>
 

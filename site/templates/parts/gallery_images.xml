@@ -3,7 +3,7 @@
 		<a href="$params['image']" cms:eval="href">
 			<img
 				src="gallery::getThumbnailById($params['id'], null, 320, Thumbnail::CONSTRAIN_BOTH)"
-				alt="$params['name'][$language]"
+				alt="$params['title'][$language]"
 				cms:eval="src,alt"
 			/>
 		</a>
