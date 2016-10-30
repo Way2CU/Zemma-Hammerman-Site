@@ -11,16 +11,14 @@
 
 		<body class="about">
 
-			<!--  Header of the site -->
-	<!-- <cms:template file="parts/header.xml" /> -->
-			<cms:module
+			<!--  Shop item module call for project_header.xml -->
+ 			<cms:module
 				name="shop"
 				action="show_item"
 				uid="$_REQUEST['name']"
-				template="parts/header.xml"
+				template="parts/project_header.xml"
 				cms:eval="uid"
 			/>
-			<!--  End of header -->
 
 			<!--  about article -->
 			<cms:module
