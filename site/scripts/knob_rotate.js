@@ -38,6 +38,7 @@ Site.Knob = function(container, knob, elements) {
 		for(var i = 0; i < self.elements.length; i++) {
 			var menu_item = document.createElement('span');
 			menu_item.classList.add('control');
+			menu_item.addEventListener('click', self.handle_label);
 
 			var label_item = document.createElement('span');
 			menu_item.appendChild(label_item);
@@ -69,6 +70,16 @@ Site.Knob = function(container, knob, elements) {
 		self.knob.addEventListener('touchstart', self.handle_touchstart);
 		self.knob.addEventListener('touchmove', self.handle_touchmove);
 		self.knob.addEventListener('touchend', self.handle_touchend);
+	}
+
+	self.handle_label = function() {
+		var item = this;
+		var pos_x = parseInt(item.style.left);
+		var pos_y = parseInt(item.style.top);
+
+		self.current_angle = self.calculate_angle(pos_x, pos_y);
+		var angle = self.knob_angle + (self.current_angle - self.start_angle);
+		self.update_knob_rotation(angle);
 	}
 
 	self.calculate_angle = function(x, y) {
