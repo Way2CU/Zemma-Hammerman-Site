@@ -32,8 +32,8 @@
 						<cms:text constant="phone2" />
 						<cms:svg file="site-sprite.svg" symbol="phone"/>
 					</a>
-					<div id="form_container">
-						<h4><cms:text constant="form_text" /></h4>
+					<div class="form_container">
+						<h5><cms:text constant="form_text" /></h5>
 						<cms:module
 							name="contact_form"
 							action="show"
