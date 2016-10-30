@@ -9,27 +9,26 @@
 			<cms:module name="head_tag" action="print_tag"/>
 		</head>
 
-		<body>
+		<body class="gallery">
 
-			<!--  Header of the site -->
-	<!-- <cms:template file="parts/header.xml" /> -->
+			<!--  Shop item module call for project_header.xml -->
+ 			<cms:module
+				name="shop"
+				action="show_item"
+				uid="$_REQUEST['name']"
+				template="parts/project_header.xml"
+				cms:eval="uid"
+			/>
+
+			<!--  Call for shop_item module -->
 			<section>
 				<cms:module
 					name="shop"
 					action="show_item"
 					uid="$_REQUEST['name']"
-					template="parts/header.xml"
+					template="parts/gallery_module_template.xml"
 					cms:eval="uid"
-					/>
-				<!--  End of header -->
-
-				<cms:module
-					name="gallery"
-					action="show_image_list"
-					group="$_REQUEST['name']"
-					template="parts/gallery_images.xml"
-
-					/>
+				/>
 
 					<!-- Project nav menu -->
 				<cms:template file="parts/project_footer_nav.xml"/>
