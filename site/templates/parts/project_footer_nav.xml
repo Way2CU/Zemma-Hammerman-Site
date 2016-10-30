@@ -2,7 +2,7 @@
 	<nav id="project_nav">
 		<!-- svg link to projects_contact -->
 		<a
-			href="URL::make(array('name' => $_REQUEST['name']), 'project_form.xml')"
+			href="URL::make(array('name' => $_REQUEST['name']), 'project_contact.xml')"
 			cms:eval="href"
 		>
 		<cms:svg file="site-sprite.svg" symbol="form"/>
