@@ -4,7 +4,18 @@
 	<cms:var name="_DOCTYPE"/>
 	<html lang="$language" dir="$language_rtl ? 'rtl' : 'ltr'" cms:eval="lang,dir">
 		<head>
-			<title><cms:text constant="site_title"/></title>
+			<title>
+				<cms:text constant="site_title"/>
+				<cms:raw text=" - "/>
+				<cms:module
+					name="shop"
+					action="show_item"
+					uid="$_REQUEST['name']"
+					template="parts/page_title.xml"
+					cms:eval="uid"
+				/>
+			</title>
+
 			<cms:collection  include="page_control"/>
 			<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCYphh6sYZbQV4LKtINhITj918xYQJeCvo"></script>
 			<cms:script src="_BASEURL.'/site/scripts/location.js'" cms:eval="src"/>
