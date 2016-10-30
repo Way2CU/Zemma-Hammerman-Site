@@ -1,0 +1,9 @@
+<document>
+	<cms:module
+		name="gallery"
+		action="show_image_list"
+		group_id="$params['gallery']"
+		template="parts/gallery_images.xml"
+		cms:eval="group_id"
+	/>
+</document>
