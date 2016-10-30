@@ -12,7 +12,7 @@
 		<body class="news">
 			<!-- Top section of the site -->
 			<cms:template file="parts/header.xml">
-				<param name="title" value="menu_contact"/>
+				<param name="title" value="menu_news"/>
 			</cms:template>
 
 			<section>
