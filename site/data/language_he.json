@@ -16,5 +16,6 @@
 	"project_menu_location" : "מפה",
 	"project_menu_about" : "אודות",
 	"project_menu_gallery" : "תמונות",
-	"project_menu_videos" : "סרטונים"
+	"project_menu_videos" : "סרטונים",
+	"button_show_project": "מעבר לפרוייקט "
 }

@@ -25,6 +25,9 @@
 
 			<section>
 				<h2><cms:text constant="home_page_title"/></h2>
+				<a class="show_project action" href="#">
+					<cms:text constant="button_show_project"/>
+				</a>
 				<div id="controls">
 					<div class="knob"></div>
 				</div>

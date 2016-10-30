@@ -9,7 +9,7 @@
 // create or use existing site scope
 var Site = Site || {};
 
-Site.Knob = function(container, knob, elements) {
+Site.Knob = function(container, knob, elements, link) {
 	var self = this;
 
 	self.container = document.querySelector(container);
@@ -23,6 +23,7 @@ Site.Knob = function(container, knob, elements) {
 	    x: self.rect.left + (self.rect.width / 2),
 	    y: self.rect.top + (self.rect.height / 2)
 	};
+	self.link_element = document.querySelector(link);
 	self.start_angle = 0;
 	self.end_angle = 0;
 	self.knob_angle = 0;
@@ -72,6 +73,9 @@ Site.Knob = function(container, knob, elements) {
 			self.container.appendChild(menu_item);
 		}
 
+		// assign default path to link element href attribute
+		self.link_element.setAttribute("href", self.url_paths[0]);
+
 		// assign touch events to knob element
 		self.knob.addEventListener('touchstart', self.handle_touchstart);
 		self.knob.addEventListener('touchmove', self.handle_touchmove);
@@ -81,6 +85,8 @@ Site.Knob = function(container, knob, elements) {
 	self.handle_label = function() {
 		var angle_between_projects = (2 * Math.PI) / self.elements.length;
 		var index = Array.prototype.indexOf.call(this.parentNode.childNodes, this) - 1;
+		var path = self.url_paths[index];
+		self.link_element.setAttribute("href", path);
 		self.knob_angle = angle_between_projects * index;
 		self.update_knob_rotation(self.knob_angle);
 	}
@@ -132,12 +138,14 @@ Site.Knob = function(container, knob, elements) {
 		var angle_between_projects = (2 * Math.PI) / self.elements.length;
 		var final_angle = self.knob_angle + (self.current_angle - self.start_angle);
 		var project_index = Math.round(final_angle / angle_between_projects);
+		var path = self.url_paths[project_index];
 
 		if(project_index > self.elements.length) {
 			project_index = 1;
 		}
 
 		Site.home_page_menu.showPage(project_index);
+		self.link_element.setAttribute("href", path);
 		self.knob_angle = project_index * angle_between_projects;
 		self.update_knob_rotation(self.knob_angle);
 	}
@@ -147,5 +155,5 @@ Site.Knob = function(container, knob, elements) {
 }
 
 $(function() {
-	Site.rotate = new Site.Knob('div#controls', 'div.knob', 'div.slider img');
+	Site.rotate = new Site.Knob('div#controls', 'div.knob', 'div.slider img', 'a.show_project');
 })
