@@ -3,8 +3,21 @@
  * Zemah hamerman site
  *
  * Copyright (c) 2016. by Way2CU, http://way2cu.com
- * Authors:Tal Reznic
+ * Authors:Tal Reznic, Iliya Melishev
  */
+
+
+div.mobile_title {
+	background-color: fade(@color_text, 50%);
+	height: 3.5em;
+}
+
+div.mobile_title a svg {
+	display: block;
+	width: 2.5em;
+	height: 2.5em;
+	fill: @color_background;
+}
 
 div.mobile_title {
 	background-color: fade(@color_text, 50%);
@@ -26,6 +39,7 @@ div.mobile_title a {
 	transform: translatey(-50%);
 }
 
+header div.mobile_title a.logo_symbol,
 div.mobile_title a.phone {
 	left: auto;
 	right: 0;
@@ -62,4 +76,26 @@ nav.mobile_menu a {
 	font-weight: 700;
 	color: @color_background;
 	border-bottom: 1px solid @color_background;
+}
+
+/*
+*Project menu nav header spesific style
+*/
+
+header.project_header div {
+	background-color: white;
+}
+
+header.project_header div > h1 {
+	color: @color_text;
+	font-weight: 400;
+}
+
+header.project_header div > a svg {
+	fill: @color_text;
+}
+
+header.project_header div.mobile_title a.logo_symbol svg {
+	width: 2em;
+	height: 2em;
 }
