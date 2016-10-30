@@ -26,6 +26,7 @@ Site.Knob = function(container, knob, elements) {
 	self.start_angle = 0;
 	self.end_angle = 0;
 	self.knob_angle = 0;
+	self.url_paths = [];
 
 	/*
 	 * object initialization
@@ -38,10 +39,15 @@ Site.Knob = function(container, knob, elements) {
 		for(var i = 0; i < self.elements.length; i++) {
 			var menu_item = document.createElement('span');
 			menu_item.classList.add('control');
+			menu_item.set
 			menu_item.addEventListener('click', self.handle_label);
 
 			var label_item = document.createElement('span');
 			menu_item.appendChild(label_item);
+
+			// append url path to array
+			var path = self.elements[i].getAttribute('data-url');
+			self.url_paths.push(path);
 
 			var x = Math.cos(angle);
 			var y = Math.sin(angle);
