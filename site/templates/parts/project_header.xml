@@ -1,0 +1,57 @@
+<document>
+	<header class="project_header">
+		<!-- Mobile Title Menu -->
+		<div class="mobile_title">
+			<a
+				href="URL::make()"
+				cms:eval="href"
+				class="logo_symbol"
+				>
+				<cms:svg file="logo-symbol.svg" />
+			</a>
+
+			<!-- Project Header -->
+			<h1><cms:var param="name" multilanguage="yes"/></h1>
+
+			<a
+				href="javascript:void(0)"
+				class="menu"
+				>
+				<cms:svg file="site-sprite.svg" symbol="menu"/>
+			</a>
+		</div>
+
+		<nav class="mobile_menu">
+			<a
+				href="URL::make()"
+				cms:eval="href"
+				>
+				<cms:text constant="menu_home"/>
+			</a>
+			<a
+				href="URL::make(array(), 'about.xml')"
+				cms:eval="href"
+				>
+				<cms:text constant="menu_about"/>
+			</a>
+			<a
+				href="URL::make(array(), 'news.xml')"
+				cms:eval="href"
+				>
+				<cms:text constant="menu_news"/>
+			</a>
+			<a
+				href="URL::make(array(), 'projects.xml')"
+				cms:eval="href"
+				>
+				<cms:text constant="menu_projects"/>
+			</a>
+			<a
+				href="URL::make(array(), 'contact.xml')"
+				cms:eval="href"
+				>
+				<cms:text constant="menu_contact"/>
+			</a>
+		</nav>
+	</header>
+</document>
