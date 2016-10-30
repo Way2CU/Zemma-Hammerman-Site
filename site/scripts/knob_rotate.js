@@ -73,13 +73,10 @@ Site.Knob = function(container, knob, elements) {
 	}
 
 	self.handle_label = function() {
-		var item = this;
-		var pos_x = parseInt(item.style.left);
-		var pos_y = parseInt(item.style.top);
-
-		self.current_angle = self.calculate_angle(pos_x, pos_y);
-		var angle = self.knob_angle + (self.current_angle - self.start_angle);
-		self.update_knob_rotation(angle);
+		var angle_between_projects = (2 * Math.PI) / self.elements.length;
+		var index = Array.prototype.indexOf.call(this.parentNode.childNodes, this) - 1;
+		self.knob_angle = angle_between_projects * index;
+		self.update_knob_rotation(self.knob_angle);
 	}
 
 	self.calculate_angle = function(x, y) {
