@@ -10,6 +10,7 @@
 	<module name="gallery" order="5" preload="no"/>
 	<module name="shop" order="6" preload="no"/>
 	<module name="contact_form" order="7" preload="no"/>
+	<module name="articles" order="8" preload="no"/>
 
 	<user
 		fullname="Administrator"
