@@ -1,9 +1,11 @@
 <document>
-	<a href="$params['image']">
-		<img
-			src="gallery::getThumbnailById($params['id'], null, 300, Thumbnail::CONSTRAIN_HEIGHT)"
-			alt="$params['name'][$language]"
-			cms:eval="src,alt"
+	<cms:if condition="!$params['text_id'] == 'project_logo'">
+		<a href="$params['image']" cms:eval="href">
+			<img
+				src="gallery::getThumbnailById($params['id'], null, 320, Thumbnail::CONSTRAIN_BOTH)"
+				alt="$params['name'][$language]"
+				cms:eval="src,alt"
 			/>
-	</a>
+		</a>
+	</cms:if>
 </document>
