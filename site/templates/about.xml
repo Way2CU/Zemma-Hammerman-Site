@@ -9,6 +9,7 @@
 				<cms:raw text=" - "/>
 				<cms:text constant="menu_about"/>
 			</title>
+			<!-- Page description -->
 			<cms:collection  include="page_control"/>
 			<cms:module name="head_tag" action="print_tag"/>
 		</head>
@@ -18,6 +19,15 @@
 			<cms:template file="parts/header.xml">
 				<param name="title" value="menu_about"/>
 			</cms:template>
+
+			<section>
+				<cms:module
+					name="articles"
+					action="show"
+					text_id="about"
+					template="stock/article_generic.xml"
+					/>
+			</section>
 
 			<!-- Footer -->
 			<cms:template file="parts/footer.xml"/>
