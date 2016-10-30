@@ -29,11 +29,9 @@
 					template="parts/gallery_module_template.xml"
 					cms:eval="uid"
 				/>
-
-				<!-- Project nav menu -->
-				<cms:template file="parts/project_footer_nav.xml"/>
 			</section>
-
+			<!-- Project nav menu -->
+			<cms:template file="parts/project_footer_nav.xml"/>
 			<!-- Footer -->
 			<cms:template file="parts/footer.xml"/>
 		</body>
