@@ -151,10 +151,6 @@ Site.Knob = function(container, knob, elements, link, title) {
 		console.log(project_index);
 		var path = self.url_paths[project_index];
 
-		if(project_index > self.elements.length) {
-			project_index = 1;
-		}
-
 		Site.home_page_menu.showPage(project_index);
 		self.link_element.setAttribute("href", path);
 		self.title_element.innerHTML = self.project_title[project_index];
