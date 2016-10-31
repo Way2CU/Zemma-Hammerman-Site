@@ -75,11 +75,11 @@ Site.Knob = function(container, knob, elements, link, title) {
 			angle += angle_increment;
 
 			// set text of labels
-			label_item.innerText = self.elements[i].getAttribute('alt');
+			label_item.innerText = self.project_title[i];
 			self.container.appendChild(menu_item);
 		}
 
-		// assign default path to link element href attribute
+		// assign default href attribute to link element
 		self.link_element.setAttribute("href", self.url_paths[0]);
 
 		// assign default title to element displaying title of project
