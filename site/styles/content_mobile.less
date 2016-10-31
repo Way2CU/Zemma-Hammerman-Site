@@ -39,7 +39,7 @@ body.home section {
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: 100% auto;
-	height: calc(~'100vw * 1.17222');
+	min-height: 375px;
 	position: relative;
 	text-align: center;
 }
@@ -54,6 +54,12 @@ section h2.project_name {
 section a.show_project {
 	display: inline-block;
 	padding: 0.5em 2em;
+}
+
+section article {
+	display: block;
+	box-sizing: border-box;
+	padding: 0em 1em;
 }
 
 div#controls {
