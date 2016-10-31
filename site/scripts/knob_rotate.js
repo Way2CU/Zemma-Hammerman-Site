@@ -9,7 +9,7 @@
 // create or use existing site scope
 var Site = Site || {};
 
-Site.Knob = function(container, knob, elements, link) {
+Site.Knob = function(container, knob, elements, link, title) {
 	var self = this;
 
 	self.container = document.querySelector(container);
@@ -24,10 +24,12 @@ Site.Knob = function(container, knob, elements, link) {
 	    y: self.rect.top + (self.rect.height / 2)
 	};
 	self.link_element = document.querySelector(link);
+	self.title_element = document.querySelector(title);
 	self.start_angle = 0;
 	self.end_angle = 0;
 	self.knob_angle = 0;
 	self.url_paths = [];
+	self.project_title = [];
 
 	/*
 	 * object initialization
@@ -49,6 +51,10 @@ Site.Knob = function(container, knob, elements, link) {
 			// append url path to array
 			var path = self.elements[i].getAttribute('data-url');
 			self.url_paths.push(path);
+
+			// append project names to array
+			var title = self.elements[i].getAttribute('data-name');
+			self.project_title.push(title);
 
 			var x = Math.cos(angle);
 			var y = Math.sin(angle);
@@ -76,6 +82,9 @@ Site.Knob = function(container, knob, elements, link) {
 		// assign default path to link element href attribute
 		self.link_element.setAttribute("href", self.url_paths[0]);
 
+		// assign default title to element displaying title of project
+		self.title_element.innerHTML = self.project_title[0];
+
 		// assign touch events to knob element
 		self.knob.addEventListener('touchstart', self.handle_touchstart);
 		self.knob.addEventListener('touchmove', self.handle_touchmove);
@@ -87,6 +96,7 @@ Site.Knob = function(container, knob, elements, link) {
 		var index = Array.prototype.indexOf.call(this.parentNode.childNodes, this) - 1;
 		var path = self.url_paths[index];
 		self.link_element.setAttribute("href", path);
+		self.title_element.innerHTML = self.project_title[index];
 		self.knob_angle = angle_between_projects * index;
 		self.update_knob_rotation(self.knob_angle);
 	}
@@ -138,6 +148,7 @@ Site.Knob = function(container, knob, elements, link) {
 		var angle_between_projects = (2 * Math.PI) / self.elements.length;
 		var final_angle = self.knob_angle + (self.current_angle - self.start_angle);
 		var project_index = Math.round(final_angle / angle_between_projects);
+		console.log(project_index);
 		var path = self.url_paths[project_index];
 
 		if(project_index > self.elements.length) {
@@ -146,6 +157,7 @@ Site.Knob = function(container, knob, elements, link) {
 
 		Site.home_page_menu.showPage(project_index);
 		self.link_element.setAttribute("href", path);
+		self.title_element.innerHTML = self.project_title[project_index];
 		self.knob_angle = project_index * angle_between_projects;
 		self.update_knob_rotation(self.knob_angle);
 	}
@@ -155,5 +167,5 @@ Site.Knob = function(container, knob, elements, link) {
 }
 
 $(function() {
-	Site.rotate = new Site.Knob('div#controls', 'div.knob', 'div.slider img', 'a.show_project');
+	Site.rotate = new Site.Knob('div#controls', 'div.knob', 'div.slider img', 'a.show_project', 'h2.project_name');
 })

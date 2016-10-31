@@ -1,9 +1,10 @@
 <document>
 	<img
 		class="image"
+		data-name="$params['name'][$language]"
 		data-url="URL::make(array('name' => $params['uid']), 'project_about.xml')"
 		src="gallery::getGroupThumbnailById($params['gallery'], null, 600, Thumbnail::CONSTRAIN_HEIGHT)"
 		alt="$params['name'][$language]"
-		cms:eval="src,alt,data-url"
+		cms:eval="src,alt,data-url,data-name"
 		/>
 </document>
