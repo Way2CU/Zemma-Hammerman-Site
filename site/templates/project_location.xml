@@ -7,6 +7,8 @@
 			<title>
 				<cms:text constant="site_title"/>
 				<cms:raw text=" - "/>
+				<cms:text constant="project_menu_location"/>
+				<cms:raw text="  "/>
 				<cms:module
 					name="shop"
 					action="show_item"
