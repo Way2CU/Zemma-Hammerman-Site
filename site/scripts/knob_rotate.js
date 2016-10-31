@@ -68,8 +68,8 @@ Site.Knob = function(container, knob, elements, link, title) {
 			}
 
 			menu_item.style.position = 'absolute';
-			menu_item.style.left = self.container_center.x + (self.radius_x - 10) * x + 'px';
-			menu_item.style.top = self.container_center.y + (self.radius_y - 10) * y + 'px';
+			menu_item.style.left = self.container_center.x + (self.radius_x - 15) * x + 'px';
+			menu_item.style.top = self.container_center.y + (self.radius_y - 15) * y + 'px';
 			menu_item.style.transform = "translate(-50%, -50%)";
 
 			angle += angle_increment;
