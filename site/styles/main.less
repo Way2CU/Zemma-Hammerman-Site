@@ -1,0 +1,45 @@
+/**
+ * Main Style Sheet
+ * Zemah hamerman site
+ *
+ * Copyright (c) 2016. by Way2CU, http://way2cu.com
+ * Authors: Tal Reznic
+ */
+
+@import "common.less";
+@import "header.less";
+@import "footer.less";
+@import "content.less";
+@import (css)'stock/copyright.css';
+
+body {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: @color_background;
+	color: @color_text;
+	font-family: 'fontbit', Arial;
+	width: 375px;
+	text-align: center;
+}
+
+body.home {
+	background-color: @color_text;
+	padding-top: 0;
+}
+
+input,
+select,
+textarea,
+button {
+	font-weight: 400;
+	font-family: 'fontbit', Arial;
+}
+
+h1,
+h3,
+h4,
+h5 {
+	font-weight: 700;
+}
