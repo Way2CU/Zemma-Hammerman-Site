@@ -6,15 +6,13 @@
  * Authors:Tal Reznic, Iliya Melishev
  */
 
-@image_ratio: 0.60166;
-
 div.slider {
 	position: relative;
-	height: calc(100vw * @image_ratio);
+	height: 200px;
 	background-image: url(../images/logo-white.svg);
 	background-repeat: no-repeat;
 	background-position: center center;
-	background-size: 250px auto;
+	background-size: 200px auto;
 	overflow: hidden;
 }
 
@@ -46,9 +44,9 @@ body.home section {
 	text-align: center;
 }
 
-section h2 {
+section h2.project_name {
 	margin: 0;
-	padding: 0.5em 0em;
+	padding: 0.2em 0em;
 	text-align: center;
 	color: @color_background;
 }
@@ -60,9 +58,9 @@ section a.show_project {
 
 div#controls {
 	position: absolute;
-	top: 50%;
+	top: 115px;
 	left: 50%;
-	transform: translate(-50%, -50%);
+	transform: translatex(-50%);
 	width: 200px;
 	height: 200px;
 }
