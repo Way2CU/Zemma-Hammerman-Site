@@ -2,7 +2,9 @@
 	<nav id="project_nav">
 		<!-- svg link to projects_contact -->
 		<a
+			class="URL::is_active('project_contact.xml')"
 			href="URL::make(array('name' => $_REQUEST['name']), 'project_contact.xml')"
+			cms:optional="class"
 			cms:eval="href"
 		>
 		<cms:svg file="site-sprite.svg" symbol="form"/>
@@ -11,7 +13,9 @@
 
 		<!-- svg link to projects_location -->
 		<a
+			class="URL::is_active('project_location.xml')"
 			href="URL::make(array('name' => $_REQUEST['name']), 'project_location.xml')"
+			cms:optional="class"
 			cms:eval="href"
 		>
 		<cms:svg file="site-sprite.svg" symbol="map"/>
@@ -20,7 +24,9 @@
 
 		<!-- svg link to projects_about -->
 		<a
+			class="URL::is_active('project_about.xml')"
 			href="URL::make(array('name' => $_REQUEST['name']), 'project_about.xml')"
+			cms:optional="class"
 			cms:eval="href"
 		>
 		<cms:svg file="site-sprite.svg" symbol="about"/>
@@ -29,7 +35,9 @@
 
 		<!-- svg link to projects_gallery -->
 		<a
+			class="URL::is_active('project_gallery.xml')"
 			href="URL::make(array('name' => $_REQUEST['name']), 'project_gallery.xml')"
+			cms:optional="class"
 			cms:eval="href"
 		>
 		<cms:svg file="site-sprite.svg" symbol="gallery"/>
@@ -38,7 +46,9 @@
 
 		<!-- svg link to projects_videos -->
 		<a
+			class="URL::is_active('project_videos.xml')"
 			href="URL::make(array('name' => $_REQUEST['name']), 'project_videos.xml')"
+			cms:optional="class"
 			cms:eval="href"
 		>
 		<cms:svg file="site-sprite.svg" symbol="video"/>
