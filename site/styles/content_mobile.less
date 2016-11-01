@@ -304,12 +304,21 @@ nav#project_nav a {
 	color: @color_grey;
 }
 
+nav#project_nav a.active {
+	background-color: @color_red;
+	color: @color_background;
+}
+
 nav#project_nav a svg {
 	width: 1.5em;
 	height: 1.5em;
 	fill: @color_grey;
 	display: block;
 	margin: 0 auto;
+}
+
+nav#project_nav a.active svg {
+	fill: @color_background;
 }
 
 nav#project_nav a.phone svg {
