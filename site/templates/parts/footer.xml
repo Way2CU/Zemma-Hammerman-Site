@@ -2,31 +2,41 @@
 	<footer>
 		<nav class="footer_menu">
 			<a
+				class="URL::is_active('home.xml')"
 				href="URL::make()"
+				cms:optional="class"
 				cms:eval="href"
 				>
 				<cms:text constant="menu_home"/>
 			</a>
 			<a
+				class="URL::is_active('about.xml')"
 				href="URL::make(array(), 'about.xml')"
+				cms:optional="class"
 				cms:eval="href"
 				>
 				<cms:text constant="menu_about"/>
 			</a>
 			<a
+				class="URL::is_active('news.xml')"
 				href="URL::make(array(), 'news.xml')"
+				cms:optional="class"
 				cms:eval="href"
 				>
 				<cms:text constant="menu_news"/>
 			</a>
 			<a
+				class="URL::is_active('projects.xml')"
 				href="URL::make(array(), 'projects.xml')"
+				cms:optional="class"
 				cms:eval="href"
 				>
 				<cms:text constant="menu_projects"/>
 			</a>
 			<a
+				class="URL::is_active('contact.xml')"
 				href="URL::make(array(), 'contact.xml')"
+				cms:optional="class"
 				cms:eval="href"
 				>
 				<cms:text constant="menu_contact"/>
