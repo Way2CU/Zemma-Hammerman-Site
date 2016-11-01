@@ -135,8 +135,6 @@ Site.Knob = function(container, knob, elements, link, title) {
 
 		var angle = self.knob_angle + (self.current_angle - self.start_angle);
 		self.update_knob_rotation(angle);
-
-		return true;
 	}
 
 	/*
@@ -148,12 +146,18 @@ Site.Knob = function(container, knob, elements, link, title) {
 		var angle_between_projects = (2 * Math.PI) / self.elements.length;
 		var final_angle = self.knob_angle + (self.current_angle - self.start_angle);
 		var project_index = Math.round(final_angle / angle_between_projects);
-		console.log(project_index);
-		var path = self.url_paths[project_index];
 
-		Site.home_page_menu.showPage(project_index);
+		if (project_index > self.elements.length - 1)
+			project_index -= self.elements.length;
+		if (project_index < 0)
+			project_index += self.elements.length;
+
+		// show selected project
+		var path = self.url_paths[project_index];
 		self.link_element.setAttribute("href", path);
 		self.title_element.innerHTML = self.project_title[project_index];
+		Site.home_page_menu.showPage(project_index);
+
 		self.knob_angle = project_index * angle_between_projects;
 		self.update_knob_rotation(self.knob_angle);
 	}
