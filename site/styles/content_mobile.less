@@ -409,3 +409,26 @@ div#map {
 	width: 100vw;
 	height: 500px;
 }
+
+/*
+ * Dialog
+ */
+
+div.dialog {
+	top: 0;
+}
+
+div.dialog div.title {
+	text-align: center;
+	background-image:
+	  url(../images/logo-symbol.svg),
+	  linear-gradient(@color_bright_red,@color_red);
+	background-repeat: no-repeat;
+	background-position: left center, center top;
+	background-size: 30% auto, 100% auto;
+}
+
+div.dialog div.command_bar a.close {
+	padding: 0.5em 2em;
+	background: linear-gradient(@color_bright_red,@color_red);
+}
