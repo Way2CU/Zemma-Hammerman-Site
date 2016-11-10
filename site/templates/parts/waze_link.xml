@@ -1,0 +1,10 @@
+<docuement>
+	<!-- Show waze link -->
+	<a
+		class="waze"
+		href="'waze://?q='.$params['name'][$language].'&amp;navigate=yes'"
+		cms:eval="href"
+		>
+		<cms:svg file="site-sprite.svg" symbol="waze"/>
+	</a>
+</docuement>

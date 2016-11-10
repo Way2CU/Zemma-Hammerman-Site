@@ -15,6 +15,16 @@
 			<cms:template file="parts/header.xml"/>
 
 			<div class="slider">
+				<!-- Manual about zema hamerman image -->
+				<img
+					class="image"
+					data-name="home_page_title"
+					data-url="about_us_link"
+					src="_BASEURL.'/site/images/logo-trans.png'"
+					alt="menu_about"
+					cms:constant="data-name,alt,data-url"
+					cms:eval="src"
+					/>
 				<cms:module
 					name="shop"
 					action="show_item_list"
@@ -24,10 +34,13 @@
 			</div>
 
 			<section>
-				<h2 class="project_name"></h2>
-				<a class="show_project action" href="#">
-					<cms:text constant="button_show_project"/>
-				</a>
+				<div class="title">
+					<h2 class="project_name"></h2>
+					<a class="show_project action" href="#">
+						<cms:text constant="button_show_project"/>
+					</a>
+				</div>
+
 				<div id="controls">
 					<div class="knob"></div>
 				</div>

@@ -9,10 +9,6 @@
 div.slider {
 	position: relative;
 	height: 200px;
-	background-image: url(../images/logo-white.svg);
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-size: 200px auto;
 	overflow: hidden;
 }
 
@@ -39,21 +35,32 @@ body.home section {
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: 100% auto;
-	min-height: 375px;
+	min-height: 330px;
 	position: relative;
 	text-align: center;
 }
 
-section h2.project_name {
+section div.title {
+	display: block;
+	position: relative;
+	padding: 0.5em 0.5em;
+}
+
+section div.title h2.project_name {
 	margin: 0;
 	padding: 0.2em 0em;
-	text-align: center;
+	text-align: right;
 	color: @color_background;
+	font-weight: 400;
+	font-size: 1.5em;
 }
 
 section a.show_project {
-	display: inline-block;
-	padding: 0.5em 2em;
+	position: absolute;
+	top: 50%;
+	left: 0.5em;
+	transform: translatey(-50%);
+	padding: 0.3em 1em;
 }
 
 section article {
@@ -64,9 +71,9 @@ section article {
 
 div#controls {
 	position: absolute;
-	top: 115px;
+	top: 50%;
 	left: 50%;
-	transform: translatex(-50%);
+	transform: translate(-50%, -50%);
 	width: 200px;
 	height: 200px;
 }
@@ -412,6 +419,27 @@ body.video section div.video {
 div#map {
 	width: 100vw;
 	height: 500px;
+}
+
+a.waze {
+	position: fixed;
+	display: inline-block;
+	top: 50%;
+	left: 0;
+	padding: 0.5em;
+	transform: translatey(-50%);
+	z-index: 10000;
+
+	background-color: @color_bright_grey;
+	box-shadow: 0px 0px 10px darken(@color_grey, 30%);
+}
+
+a.waze svg {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 2.5em;
+	height: 2.5em;
 }
 
 /*

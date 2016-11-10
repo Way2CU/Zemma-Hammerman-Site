@@ -35,9 +35,9 @@
 			</a>
 			<a
 				class="URL::is_active('about.xml')"
-				href="URL::make(array(), 'about.xml')"
+				href="about_us_link"
 				cms:optional="class"
-				cms:eval="href"
+				cms:constant="href"
 				>
 				<cms:text constant="menu_about"/>
 			</a>

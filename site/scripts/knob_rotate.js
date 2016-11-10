@@ -42,7 +42,6 @@ Site.Knob = function(container, knob, elements, link, title) {
 		for(var i = 0; i < self.elements.length; i++) {
 			var menu_item = document.createElement('span');
 			menu_item.classList.add('control');
-			menu_item.set
 			menu_item.addEventListener('click', self.handle_label);
 
 			var label_item = document.createElement('span');
@@ -75,7 +74,7 @@ Site.Knob = function(container, knob, elements, link, title) {
 			angle += angle_increment;
 
 			// set text of labels
-			label_item.innerText = self.project_title[i];
+			label_item.innerText = self.elements[i].getAttribute('alt');
 			self.container.appendChild(menu_item);
 		}
 
