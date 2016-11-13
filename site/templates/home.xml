@@ -20,7 +20,7 @@
 					class="image"
 					data-name="home_page_title"
 					data-url="about_us_link"
-					src="_BASEURL.'/site/images/logo-trans.png'"
+					src="_BASEURL.'/site/images/hamerman-logo-small.jpg'"
 					alt="menu_about"
 					cms:constant="data-name,alt,data-url"
 					cms:eval="src"
