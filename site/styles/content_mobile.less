@@ -6,9 +6,11 @@
  * Authors:Tal Reznic, Iliya Melishev
  */
 
+@image_ratio: 0.665;
+
 div.slider {
 	position: relative;
-	height: 200px;
+	height: calc(100vw * @image_ratio);
 	overflow: hidden;
 }
 
