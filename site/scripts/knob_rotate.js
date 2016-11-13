@@ -148,7 +148,6 @@ Site.Knob = function(container, knob, elements, link, title) {
 		var angle_between_projects = (2 * Math.PI) / self.elements.length;
 		var final_angle = self.knob_angle + (self.current_angle - self.start_angle);
 		var project_index = Math.round(final_angle / angle_between_projects);
-		console.log(project_index);
 
 		// calculate project index according to rotation direction
 		if (project_index > self.elements.length - 1)
