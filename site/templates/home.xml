@@ -25,24 +25,27 @@
 					cms:constant="data-name,alt,data-url"
 					cms:eval="src"
 					/>
+
 				<cms:module
 					name="shop"
 					action="show_item_list"
 					order_by="priority"
 					template="parts/slider_images.xml"
 					/>
+
+				<a class="show_project action" href="#">
+					<cms:text constant="button_show_project"/>
+				</a>
 			</div>
 
 			<section>
 				<div class="title">
 					<h2 class="project_name"></h2>
-					<a class="show_project action" href="#">
-						<cms:text constant="button_show_project"/>
-					</a>
 				</div>
 
 				<div id="controls">
-					<div class="knob"></div>
+					<div class="knob">
+					</div>
 				</div>
 			</section>
 

@@ -30,6 +30,14 @@ div.slider img.visible {
 	visibility: visible;
 }
 
+div.slider a.show_project {
+	position: absolute;
+	bottom: 0px;
+	left: 0.5em;
+	padding: 0.3em 1em;
+	visibility: hidden;
+}
+
 body.home section {
 	background-image: url(../images/dots-background.jpg);
 	background-repeat: no-repeat;
@@ -49,18 +57,10 @@ section div.title {
 section div.title h2.project_name {
 	margin: 0;
 	padding: 0.2em 0em;
-	text-align: right;
+	text-align: center;
 	color: @color_background;
 	font-weight: 400;
 	font-size: 1.5em;
-}
-
-section a.show_project {
-	position: absolute;
-	top: 50%;
-	left: 0.5em;
-	transform: translatey(-50%);
-	padding: 0.3em 1em;
 }
 
 section article {
@@ -111,7 +111,7 @@ div#controls span.control:first-of-type > span.center {
 
 div#controls span.control > span.left {
 	position: absolute;
-	padding-left: 0.2em;
+	padding-left: 0.5em;
 	left: 100%;
 	top: 50%;
 	transform: translatey(-50%);
@@ -120,7 +120,7 @@ div#controls span.control > span.left {
 
 div#controls span.control > span.right {
 	position: absolute;
-	padding-right: 0.2em;
+	padding-right: 0.5em;
 	right: 100%;
 	top: 50%;
 	transform: translatey(-50%);
