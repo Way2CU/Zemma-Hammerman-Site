@@ -19,9 +19,9 @@
 			</a>
 			<a
 				class="URL::is_active('news.xml')"
-				href="URL::make(array(), 'news.xml')"
+				href="news_link"
 				cms:optional="class"
-				cms:eval="href"
+				cms:constant="href"
 				>
 				<cms:text constant="menu_news"/>
 			</a>
