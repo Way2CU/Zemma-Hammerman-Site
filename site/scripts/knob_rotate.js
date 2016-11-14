@@ -99,6 +99,7 @@ Site.Knob = function(container, knob, elements, link, title) {
 		var path = self.url_paths[index];
 		self.link_element.setAttribute("href", path);
 		self.title_element.innerHTML = self.project_title[index];
+		self.link_element.style.visibility = 'visible';
 		self.knob_angle = angle_between_projects * index;
 		self.update_knob_rotation(self.knob_angle);
 	}
