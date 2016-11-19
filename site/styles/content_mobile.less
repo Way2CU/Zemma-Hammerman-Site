@@ -303,6 +303,7 @@ nav#project_nav {
 	width: 100%;
 	text-align: center;
 	background-color: @color_bright_grey;
+	position: relative;
 }
 
 nav#project_nav a {
@@ -351,12 +352,25 @@ nav#project_nav a.phone svg {
 	padding: 1em;
 }
 
+.about section > a.show_more {
+	display: block;
+	text-align: center;
+	margin-top: 1em;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 1em 0em;
+	width: 90%;
+	position: relative;
+	visibility: visible;
+	opacity: 1;
+}
+
 .about section:before {
 	content: " ";
 	display: block;
 	width: 100%;
 	position: absolute;
-	bottom: 0;
+	top: 305px;
 	left: 0;
 	right: 0;
 	background: linear-gradient(0deg, @color_background, transparent);
@@ -374,10 +388,17 @@ nav#project_nav a.phone svg {
 	box-sizing: border-box;
 	padding: 0.5em;
 	box-shadow: 0px 0px 2px 0px @color_bright_grey;
+	position: relative;
+	overflow: hidden;
+	transition: all 0.3s;
 }
 
 .about section article h2 {
 	color: @color_text;
+}
+
+.about section article p {
+	font-size: 1.2em;
 }
 
 .about section article p:first-of-type,

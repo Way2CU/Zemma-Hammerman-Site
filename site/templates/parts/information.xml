@@ -6,5 +6,12 @@
 		<article>
 			<cms:markdown param="description" multilanguage="yes" />
 		</article>
+		<!-- Read more button -->
+		<a
+			class="action show_more"
+			href="javascript:void(0)"
+			>
+		<cms:text constant="button_show_more"/>
+		</a>
 	</section>
 </document>
