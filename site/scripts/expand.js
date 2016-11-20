@@ -20,8 +20,13 @@ Site.ExpandContent = function(article, button, hidden_elements) {
 
 	// initialize function
 	self._init = function() {
+		// condition to display read more button
+		if(self.elements.length > self.hidden_elements) {
+			self.button.style.visibility = "visible";
+			self.button.style.opacity = 1;
+			self.handle_click();
+		}
 
-		self.handle_click();
 		self.button.addEventListener('click', self.handle_click);
 	}
 
