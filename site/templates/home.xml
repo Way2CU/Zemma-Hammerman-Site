@@ -33,9 +33,9 @@
 					template="parts/slider_images.xml"
 					/>
 
-				<a class="show_project action" href="#">
+<!-- 				<a class="show_project action" href="#">
 					<cms:text constant="button_show_project"/>
-				</a>
+				</a> -->
 			</div>
 
 			<section>

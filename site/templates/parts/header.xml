@@ -12,6 +12,10 @@
 				<cms:svg file="site-sprite.svg" symbol="phone"/>
 			</a>
 
+			<a class="show_project action" href="#">
+				<cms:text constant="button_show_project"/>
+			</a>
+
 			<!-- header title -->
 				<h1>
 					<cms:text constant="$template['title']" cms:eval="constant"/>
