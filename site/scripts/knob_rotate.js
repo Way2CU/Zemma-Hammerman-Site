@@ -136,8 +136,18 @@ Site.Knob = function(container, knob, elements, link, title) {
 		var touch = event.touches[0];
 		self.current_angle = self.calculate_angle(touch.pageX, touch.pageY);
 
+		var angle_between_projects = (2 * Math.PI) / self.elements.length;
 		var angle = self.knob_angle + (self.current_angle - self.start_angle);
+		var project_index = Math.round(angle / angle_between_projects);
 		self.update_knob_rotation(angle);
+
+		// calculate project index according to rotation direction
+		if (project_index > self.elements.length - 1)
+			project_index -= self.elements.length;
+		if (project_index < 0)
+			project_index += self.elements.length;
+
+		Site.home_page_menu.showPage(project_index);
 	}
 
 	/*
