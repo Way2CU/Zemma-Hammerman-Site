@@ -148,6 +148,7 @@ Site.Knob = function(container, knob, elements, link, title) {
 			project_index += self.elements.length;
 
 		Site.home_page_menu.showPage(project_index);
+		self.title_element.innerHTML = self.project_title[project_index];
 	}
 
 	/*
@@ -185,5 +186,5 @@ Site.Knob = function(container, knob, elements, link, title) {
 }
 
 $(function() {
-	Site.rotate = new Site.Knob('div#controls', 'div.knob', 'div.slider img', 'a.show_project', 'h2.project_name');
+	Site.rotate = new Site.Knob('div#controls', 'div.knob', 'div.slider img', 'a.show_project', 'header h1');
 })

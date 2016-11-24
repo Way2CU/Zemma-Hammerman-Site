@@ -39,9 +39,9 @@
 			</div>
 
 			<section>
-				<div class="title">
-					<h2 class="project_name"></h2>
-				</div>
+				<a class="show_project action" href="#">
+					<cms:text constant="button_show_project"/>
+				</a>
 
 				<div id="controls">
 					<div class="knob">
