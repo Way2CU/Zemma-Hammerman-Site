@@ -8,7 +8,7 @@
 		</article>
 		<!-- Read more button -->
 		<a
-			class="action show_more"
+			class="show_more"
 			href="javascript:void(0)"
 			>
 		<cms:text constant="button_show_more"/>
