@@ -25,16 +25,27 @@ footer nav.footer_menu a {
 	position: relative;
 	box-sizing: border-box;
 	position: relative;
+	font-weight: 700;
 	width: calc(~'100% / 5');
 }
 
-footer nav.footer_menu a.active {
-	background-color: @color_red;
+footer nav.footer_menu a:after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	right: calc(~'100% - 2px');
+	transform: translatey(-50%);
+	width: 2px;
+	height: 1em;
+	background-color: @color_background;
 }
 
-footer nav.footer_menu a:nth-child(3):after,
-footer nav.footer_menu a:nth-child(5):after {
-	display: none;
+footer nav.footer_menu a:last-of-type:after {
+	content: none;
+}
+
+footer nav.footer_menu a.active {
+	color: @color_red;
 }
 
 footer div.copyright {
