@@ -186,5 +186,5 @@ Site.Knob = function(container, knob, elements, link, title) {
 }
 
 $(function() {
-	Site.rotate = new Site.Knob('div#controls', 'div.knob', 'div.slider img', 'a.show_project', 'header h1');
+	Site.rotate = new Site.Knob('div#controls', 'div.knob', 'div.slider img', 'a.show_project', 'section h1');
 })

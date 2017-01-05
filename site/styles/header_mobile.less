@@ -14,8 +14,8 @@ div.mobile_title {
 
 div.mobile_title a svg {
 	display: block;
-	width: 2.5em;
-	height: 2.5em;
+	width: 1.8em;
+	height: 1.8em;
 	fill: @color_background;
 }
 
@@ -40,25 +40,29 @@ div.mobile_title a {
 }
 
 div.mobile_title a.show_project {
+	text-decoration: none;
 	position: absolute;
 	padding: 0.5em 2em;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
+	color: @color_background;
+	font-size: 1.8em;
 	visibility: hidden;
+}
+
+div.mobile_title a.show_project:before {
+	content: ">>";
+	position: absolute;
+	top: 50%;
+	right: calc(~'100% - 1.8em');
+	transform: translatey(-50%);
 }
 
 header div.mobile_title a.logo_symbol,
 div.mobile_title a.phone {
 	left: auto;
 	right: 0;
-}
-
-div.mobile_title a svg {
-	display: block;
-	width: 2.5em;
-	height: 2.5em;
-	fill: @color_background;
 }
 
 div.mobile_title h1 {

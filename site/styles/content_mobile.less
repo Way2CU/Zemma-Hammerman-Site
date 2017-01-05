@@ -8,9 +8,19 @@
 
 @image_ratio: 0.665;
 
+body.home {
+	background-color: @color_text;
+	background-image: url(../images/dots-background.jpg);
+	background-repeat: no-repeat;
+	background-position: center calc(~'100vw *' @image_ratio);
+	background-size: 100% auto;
+	height: calc(~'100vw *' (1266 / 1080));
+	padding-top: 0;
+}
+
 div.slider {
 	position: relative;
-	height: calc(100vw * @image_ratio);
+	height: calc(~'100vw *' @image_ratio);
 	overflow: hidden;
 }
 
@@ -43,13 +53,15 @@ div.slider a.show_project {
 }
 
 body.home section {
-	background-image: url(../images/dots-background.jpg);
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-size: 100% auto;
-	min-height: 330px;
 	position: relative;
 	text-align: center;
+	height: 250px;
+}
+
+section h1 {
+	margin: 0;
+	color: @color_background;
+	font-weight: 400;
 }
 
 section a.show_project {
@@ -70,8 +82,8 @@ div#controls {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	width: 200px;
-	height: 200px;
+	width: 190px;
+	height: 190px;
 }
 
 div#controls span.control {
@@ -87,7 +99,7 @@ div#controls span.control:before {
 	left: 50%;
 	width: 10px;
 	height: 10px;
-	border: 2px solid white;
+	border: 1px solid white;
 	border-radius: 50%;
 	transform: translate(-50%, -50%);
 	transition: all 0.3s;
@@ -111,7 +123,7 @@ div#controls span.control > span.left {
 	left: 100%;
 	top: 50%;
 	transform: translatey(-50%);
-	width: 75px;
+	width: 65px;
 }
 
 div#controls span.control > span.right {
@@ -120,7 +132,7 @@ div#controls span.control > span.right {
 	right: 100%;
 	top: 50%;
 	transform: translatey(-50%);
-	width: 75px;
+	width: 65px;
 }
 
 div#controls span.control.active:before {
