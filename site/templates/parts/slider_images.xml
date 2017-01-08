@@ -7,4 +7,13 @@
 		alt="$params['name'][$language]"
 		cms:eval="src,alt,data-url,data-name"
 		/>
+	<!-- show shop item propery project for title -->
+	<cms:module
+		name="shop"
+		action="show_property"
+		item="$params['id']"
+		text_id="project"
+		template="parts/property.xml"
+		cms:eval="item"
+		/>
 </document>

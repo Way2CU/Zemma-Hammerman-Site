@@ -11,8 +11,14 @@
 			</a>
 
 			<!-- Project Header -->
-			<h1><cms:var param="name" multilanguage="yes"/></h1>
-
+			<cms:module
+				name="shop"
+				action="show_property"
+				item="$params['id']"
+				text_id="project"
+				template="parts/project_title.xml"
+				cms:eval="item"
+				/>
 			<a
 				href="javascript:void(0)"
 				class="menu"

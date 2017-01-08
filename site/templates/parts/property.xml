@@ -1,0 +1,3 @@
+<document>
+	<input type="hidden" value="$params['name'][$language]" cms:eval="value"/>
+</document>

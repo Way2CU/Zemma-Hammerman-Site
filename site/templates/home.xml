@@ -24,6 +24,7 @@
 					cms:constant="data-name,alt,data-url"
 					cms:eval="src"
 					/>
+				<input type="hidden" value="home_page_title" cms:constant="value"/>
 
 				<cms:module
 					name="shop"

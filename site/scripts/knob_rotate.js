@@ -9,11 +9,12 @@
 // create or use existing site scope
 var Site = Site || {};
 
-Site.Knob = function(container, knob, elements, link, title) {
+Site.Knob = function(container, knob, elements, project_names, link, title) {
 	var self = this;
 
 	self.container = document.querySelector(container);
 	self.knob = self.container.querySelector(knob);
+	self.project_names = document.querySelectorAll(project_names);
 	self.elements = document.querySelectorAll(elements);
 	self.radius_x = self.container.clientWidth / 2;
 	self.radius_y = self.container.clientHeight / 2;
@@ -52,7 +53,7 @@ Site.Knob = function(container, knob, elements, link, title) {
 			self.url_paths.push(path);
 
 			// append project names to array
-			var title = self.elements[i].getAttribute('data-name');
+			var title = self.project_names[i].value;
 			self.project_title.push(title);
 
 			var x = Math.cos(angle);
@@ -186,5 +187,5 @@ Site.Knob = function(container, knob, elements, link, title) {
 }
 
 $(function() {
-	Site.rotate = new Site.Knob('div#controls', 'div.knob', 'div.slider img', 'a.show_project', 'section h1');
+	Site.rotate = new Site.Knob('div#controls', 'div.knob', 'div.slider img','div.slider input', 'a.show_project', 'section h1');
 })
