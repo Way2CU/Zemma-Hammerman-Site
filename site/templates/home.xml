@@ -16,6 +16,7 @@
 					<p><cms:text constant="desktop_home_page_title"/></p>
 					<img
 						src="_BASEURL.'/site/images/logo-trans.png'"
+						alt="site_title"
 						cms:constant="alt"
 						cms:eval="src"
 						/>
