@@ -8,7 +8,8 @@
 	"menu_news": "חדשות",
 	"menu_projects": "פרויקטים",
 	"menu_contact": "צור קשר",
-	"phone2" : "3066*",
+	"phone1" : "3066*",
+	"phone2" : "*3066",
 	"call_us_today" : "לפרטים נוספים התקשרו אלינו עוד היום:",
 	"form_text" : "מעוניינים שנחזור אליכם? מלאו את הטופס:",
 	"project_menu_about" : "אודות",
@@ -18,6 +19,7 @@
 	"project_menu_videos" : "סרטונים",
 	"button_show_project": "לפרוייקט",
 	"button_show_more": "קרא עוד >>",
+	"button_close": "סגור >>",
 	"about_us_link": "http://duns100.globes.co.il/companies-1000855373",
 	"news_link": "https://www.facebook.com/zhg.group/?fref=ts"
 }
