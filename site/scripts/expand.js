@@ -36,11 +36,17 @@ Site.ExpandContent = function(article, button, hidden_elements) {
 				self.elements[i].style.display = "none";
 			}
 			self.hidden = false;
+			language_handler.getTextArrayAsync(null, ['button_show_more', 'button_close'], function(data) {
+				self.button.innerText = data.button_show_more;
+			});
 		} else {
 			for(var i = self.hidden_elements; i < self.elements.length; i++) {
 				self.elements[i].style.display = "block";
 			}
 			self.hidden = true;
+			language_handler.getTextArrayAsync(null, ['button_show_more', 'button_close'], function(data) {
+				self.button.innerText = data.button_close;
+			});
 		}
 	}
 
