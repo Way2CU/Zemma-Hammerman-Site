@@ -5,7 +5,7 @@
 	<header>
 		<div class="mobile_title">
 			<a
-				href="'tel:'.urlencode(Language::get_Text('phone'))"
+				href="'tel:'.urlencode(Language::get_Text('phone2'))"
 				cms:eval="href"
 				class="phone"
 				>

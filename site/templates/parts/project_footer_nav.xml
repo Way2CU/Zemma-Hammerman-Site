@@ -57,7 +57,7 @@
 
 		<!-- svg link to phone -->
 		<a
-			href="'tel:'.urlencode(Language::get_Text('phone'))"
+			href="'tel:'.urlencode(Language::get_Text('phone2'))"
 			cms:eval="href"
 			class="phone"
 			>
