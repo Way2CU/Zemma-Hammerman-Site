@@ -1,32 +1,26 @@
 /**
  * Main Style Sheet
- * Zemah hamerman site
+ *
  *
  * Copyright (c) 2016. by Way2CU, http://way2cu.com
- * Authors: Tal Reznic
+ * Authors:Tal Reznic
  */
-
 @import "common.less";
-@import "header.less";
-@import "footer.less";
 @import "content.less";
-@import (css)'stock/copyright.css';
 
 body {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	background-color: @color_background;
-	color: @color_text;
-	font-family: 'fontbit', Arial;
-	width: 375px;
-	text-align: center;
+	background-color: @color_text;
+	font-family: 'fontbit', sans-serif;
 }
 
 body.home {
-	background-color: @color_text;
-	padding-top: 0;
+	background:
+	    radial-gradient(50% 50%, rgba(24, 16, 18, 0.7) 0%, rgba(0, 0, 0, 1) 100%),
+	    url(../images/pattern.png);
+	background-repeat: no-repeat, repeat;
+	background-position: center center, center center;
+	background-size: 100% auto, 15px 15px;
+	height: 100vh;
 }
 
 input,
@@ -34,12 +28,13 @@ select,
 textarea,
 button {
 	font-weight: 400;
-	font-family: 'fontbit', Arial;
+	font-family: 'fontbit', sans-serif;
 }
 
 h1,
 h3,
 h4,
 h5 {
+	font-family: 'Arimo', sans-serif;
 	font-weight: 700;
 }

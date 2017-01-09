@@ -1,402 +1,54 @@
 /**
- * Content mobile Style Sheet
+ * Content desktop Style Sheet
  * Zemah hamerman site
  *
  * Copyright (c) 2016. by Way2CU, http://way2cu.com
  * Authors:Tal Reznic, Iliya Melishev
  */
 
-div.slider {
-	position: relative;
-	height: 200px;
-	background-image: url(../images/logo-white.svg);
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-size: 200px auto;
-	overflow: hidden;
-}
-
-div.slider img {
-	position: absolute;
-	top: 50%;
-	left: 0;
-	right: 0;
-	width: 100%;
-	height: auto;
-	transform: translatey(-50%);
-	opacity: 0;
-	visibility: hidden;
-	transition: all 0.3s;
-}
-
-div.slider img.visible {
-	opacity: 1;
-	visibility: visible;
-}
-
-body.home section {
-	background-image: url(../images/dots-background.jpg);
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-size: 100% auto;
-	height: calc(~'100vw *' (1266 / 1080));
-	position: relative;
-	text-align: center;
-}
-
-section h2.project_name {
-	margin: 0;
-	padding: 0.2em 0em;
-	text-align: center;
-	color: @color_background;
-}
-
-section a.show_project {
-	display: inline-block;
-	padding: 0.5em 2em;
-}
-
-section article {
-	display: block;
-	box-sizing: border-box;
-	padding: 0em 1em;
-}
-
-div#controls {
-	position: absolute;
-	top: 115px;
-	left: 50%;
-	transform: translatex(-50%);
-	width: 200px;
-	height: 200px;
-}
-
-div#controls span.control {
-	text-align: center;
-	color: @color_background;
-	position: relative;
-}
-
-div#controls span.control:before {
-	content: "";
+section {
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	width: 10px;
-	height: 10px;
-	border: 2px solid white;
-	border-radius: 50%;
 	transform: translate(-50%, -50%);
-	transition: all 0.3s;
-}
-
-div#controls span.control > span {
-	position: absolute;
-	top: 10px;
-	left: 50%;
-	transform: translatex(-50%);
-	width: 200px;
-}
-
-div#controls span.control:first-of-type > span.center {
-	top: -30px;
-}
-
-div#controls span.control > span.left {
-	position: absolute;
-	padding-left: 0.2em;
-	left: 100%;
-	top: 50%;
-	transform: translatey(-50%);
-	width: 75px;
-}
-
-div#controls span.control > span.right {
-	position: absolute;
-	padding-right: 0.2em;
-	right: 100%;
-	top: 50%;
-	transform: translatey(-50%);
-	width: 75px;
-}
-
-div#controls span.control.active:before {
-	background-color: @color_red;
-}
-
-div#controls div.knob {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	background-image: url(../images/nobe.png);
+	color: @color_background;
+	background-image:
+		url(../images/phone-screen.jpg),
+		url(../images/phone.png);
 	background-repeat: no-repeat;
-	background-position: center center;
-	background-size: 140px 140px;
-	width: 140px;
-	height: 140px;
-	border-radius: 50%;
-	transform: translate(-50%, -50%);
+	background-position: 20px center, left center;
+	background-size: 205px 350px, 245px 500px;
+	width: 800px;
+	min-height: 500px;
 }
 
-/*
-*Contact Page
-*/
-
-body.contact section {
-	text-align: center;
-	padding: 0.5em;
-}
-
-body.contact section img {
+section img {
 	display: block;
-	width: 80%;
-	margin: 0 auto;
+	margin-bottom: 2em;
+	width: 50%;
 }
 
-body.contact.project section img {
-	width: auto;
-}
-
-body.contact section h4 {
-	text-align: center;
-	margin-bottom: 0.5em;
-}
-
-body.contact section > h4:before {
-	content: "";
-	display: block;
-	width: 80%;
-	height: 1px;
-	background-color: black;
-	margin: 1em auto;
-}
-
-body.contact.project section > h4:before {
-	display: none;
-}
-
-body.contact section a {
-	font-size: 1.5em;
-	text-align: center;
-}
-
-body.contact section a svg {
-	width: 35px;
-	height: 35px;
-	display: inline-block;
-	vertical-align: middle;
-	padding-right: 0.5em;
-	padding-bottom: 5px;
-	fill: white;
-}
-
-/*
-*Form style
-*/
-
-div.form_container {
-	display: block;
-	width: 100%;
-}
-
-div.form_container h5 {
+section h1 {
+	font-weight: 400;
+	font-size: 2.5em;
 	margin-bottom: 0;
 }
 
-div.form_container form {
-	display: block;
-	width: 90%;
-	margin: 0 auto;
+section p {
+	margin-top: 0;
+	font-size: 2em;
 }
 
-div.form_container form label {
-	display: block;
-	width: 100%;
-	padding-bottom: 0.5em;
-	box-sizing: border-box;
-}
-
-div.form_container form label select,
-div.form_container form label input {
-	padding: 1em;
-	border: 1px solid @color_grey;
-	display: block;
-	box-sizing: border-box;
-	width: 100%;
-}
-
-div.form_container form label span {
-	display: block;
-	text-align: right;
-}
-
-div.form_container form label.checkbox {
-	position: relative;
-}
-
-div.form_container form label.checkbox span {
-	font-size: 1em;
-	display: block;
-	text-align: right;
-	padding-right: 25px;
-}
-
-div.form_container form label.checkbox input {
-	position: absolute;
-	right: 0;
-	top: 40%;
-	transform: translatey(-50%);
-	width: 20px;
-	height: 15px;
-	display: block;
-}
-
-div.form_container div.controls button{
-	padding: 0.7em 3.5em;
-}
-
-/*
-*Projects Page
-*/
-
-.projects section {
-	text-align: center;
-	padding: 0.5em;
-	background-color: @color_bright_grey;
-}
-
-.projects section div {
-	border: 1px solid @color_bright_grey;
-	width: 300px;
-	margin: 0 auto;
-	margin-bottom: 1em;
-	box-shadow: 0px 0px 2px 0px @color_grey;
-}
-
-.projects section div img {
-	display: block;
-	margin: 0 auto;
-}
-
-.projects section div a {
+section a.phone {
 	display: inline-block;
-	margin: 0.5em auto;
+	padding: 0.2em 0.5em;
+	font-size: 3em;
 }
 
-/*
-*Projects nav
-*/
-
-nav#project_nav {
-	display: block;
-	width: 100%;
-	text-align: center;
-	background-color: @color_bright_grey;
-	padding: 1em 0;
-}
-
-nav#project_nav a {
+section a.phone svg {
 	display: inline-block;
 	vertical-align: middle;
-	text-align: center;
-	width: calc(~'100% / 6.3');
-	text-decoration: none;
-	color: @color_grey;
-}
-
-nav#project_nav a svg {
-	width: 1.5em;
-	height: 1.5em;
-	fill: @color_grey;
-	display: block;
-	margin: 0 auto;
-}
-
-nav#project_nav a.phone svg {
-	border: 1px solid @color_grey;
-	border-radius: 100%;
-	background:  -webkit-linear-gradient(45deg,#c2cacf,white,#c2cacf);
-	background:  -moz-linear-gradient(45deg,#c2cacf,white,#c2cacf);
-	background:  linear-gradient(45deg,#c2cacf,white,#c2cacf);
-	padding: 5px;
-}
-
-/*
-*Project About page
-*/
-
-.about section {
-	background-repeat: no-repeat;
-	position: relative;
-	padding: 1em;
-}
-
-.about section:before {
-	content: " ";
-	display: block;
-	width: 100%;
-	position: absolute;
-	top: 300px;
-	left: 0;
-	right: 0;
-	background: linear-gradient(0deg, @color_background, transparent);
-	height: 200px;
-	z-index: 0;
-}
-
-.about section article {
-	background-color: fade(@color_background, 90%);
-	display: block;
-	margin: 0 auto;
-	width: 90%;
-	position: relative;
-	z-index: 1;
-	box-sizing: border-box;
-	padding: 0.5em;
-	box-shadow: 0px 0px 2px 0px @color_bright_grey;
-}
-
-.about section article h2 {
-	color: @color_text;
-}
-
-.about section article p:first-of-type,
-.about section article p:last-of-type {
-	margin: 0;
-}
-
-/*
-*Project gallery page
-*/
-
-.gallery section > a {
-	display: block;
-	width: 100%;
-	margin: 0 auto;
-	padding: 0.2em 0;
-}
-
-.gallery section > a img {
-	display: block;
-	margin: 0 auto;
-}
-
-/*
-*Project video page
-*/
-
-body.video section div.video {
-	display: block;
-	width: 100%;
-	margin: 0 auto;
-	text-align: center;
-}
-
-/*
-*Project location page
-*/
-
-div#map {
-	width: 100vw;
-	height: 500px;
+	width: 1em;
+	height: 1em;
+	fill: @color_background;
 }

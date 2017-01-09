@@ -187,5 +187,6 @@ Site.Knob = function(container, knob, elements, project_names, link, title) {
 }
 
 $(function() {
-	Site.rotate = new Site.Knob('div#controls', 'div.knob', 'div.slider img','div.slider input', 'a.show_project', 'section h1');
+	if(Site.is_mobile())
+		Site.rotate = new Site.Knob('div#controls', 'div.knob', 'div.slider img','div.slider input', 'a.show_project', 'section h1');
 })
