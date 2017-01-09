@@ -32,7 +32,7 @@
 						cms:eval="href"
 						class="phone action"
 						>
-						<cms:text constant="phone2" />
+						<cms:text constant="phone1" />
 						<cms:svg file="site-sprite.svg" symbol="phone"/>
 					</a>
 					<div class="form_container">
