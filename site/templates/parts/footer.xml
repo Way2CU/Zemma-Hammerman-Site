@@ -26,8 +26,8 @@
 				<cms:text constant="menu_news"/>
 			</a>
 			<a
-				class="URL::is_active('projects.xml')"
-				href="URL::make(array(), 'projects.xml')"
+				class="(isset($_REQUEST['category']) and ($_REQUEST['category'] == 'private')) ? 'active' : false"
+				href="URL::make(array('category' => 'private'), 'projects.xml')"
 				cms:optional="class"
 				cms:eval="href"
 				>
