@@ -25,8 +25,10 @@
 				<cms:module
 					name="shop"
 					action="show_item_list"
+					category="$_REQUEST['category']"
 					order_by="priority"
 					template="parts/projects_list.xml"
+					cms:eval="category"
 				/>
 			</section>
 

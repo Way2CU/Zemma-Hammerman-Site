@@ -58,12 +58,19 @@
 			</a>
 			<a
 				class="URL::is_active('projects.xml')"
-				href="URL::make(array(), 'projects.xml')"
+				href="URL::make(array('category' => 'private'), 'projects.xml')"
 				cms:optional="class"
 				cms:eval="href"
 				>
 				<cms:text constant="menu_projects"/>
 			</a>
+			<!-- show commercial projects category -->
+			<cms:module
+				name="shop"
+				action="show_category"
+				category="commercial"
+				template="parts/commercial_link.xml"
+				/>
 			<a
 				class="URL::is_active('contact.xml')"
 				href="URL::make(array(), 'contact.xml')"

@@ -1,0 +1,8 @@
+<document>
+	<a
+		href="URL::make(array('category' => $params['text_id']), 'projects.xml')"
+		cms:eval="href"
+		>
+		<cms:var param="title" multilanguage="yes"/>
+	</a>
+</document>

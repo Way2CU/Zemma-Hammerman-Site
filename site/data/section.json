@@ -2,7 +2,7 @@
 	"/": "home.xml",
 	"/about": "about.xml",
 	"/news": "news.xml",
-	"/projects": "projects.xml",
+	"/projects/{category}": "projects.xml",
 	"/projects/{name}/about": "project_about.xml",
 	"/projects/{name}/contact": "project_contact.xml",
 	"/projects/{name}/location": "project_location.xml",

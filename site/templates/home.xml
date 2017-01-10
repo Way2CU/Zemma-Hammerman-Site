@@ -53,6 +53,7 @@
 					<cms:module
 						name="shop"
 						action="show_item_list"
+						category="private"
 						order_by="priority"
 						template="parts/slider_images.xml"
 						/>
