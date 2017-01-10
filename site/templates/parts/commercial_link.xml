@@ -1,6 +1,8 @@
 <document>
 	<a
+		class="(isset($_REQUEST['category']) and ($_REQUEST['category'] == $params['text_id'])) ? 'active' : false"
 		href="URL::make(array('category' => $params['text_id']), 'projects.xml')"
+		cms:optional="class"
 		cms:eval="href"
 		>
 		<cms:var param="title" multilanguage="yes"/>

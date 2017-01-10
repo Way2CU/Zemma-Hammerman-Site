@@ -15,9 +15,18 @@
 		<body class="projects">
 
 			<!-- header -->
-			<cms:template file="parts/header.xml">
-				<param name="title" value="menu_projects"/>
-			</cms:template>
+			<!-- check url category param in order to specify correct title : either 'commercial' or 'private' -->
+			<cms:if condition="$_REQUEST['category'] == 'private'">
+				<cms:template file="parts/header.xml">
+					<param name="title" value="menu_projects"/>
+				</cms:template>
+			</cms:if>
+
+			<cms:if condition="$_REQUEST['category'] == 'commercial'">
+				<cms:template file="parts/header.xml">
+					<param name="title" value="menu_commercial_projects"/>
+				</cms:template>
+			</cms:if>
 			<!-- end-header -->
 
 			<!-- shop_list_projects -->
