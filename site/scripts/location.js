@@ -12,7 +12,7 @@ Site.Map = function() {
 			{zoom: 10, mapTypeControl: false, draggable: false, scrollwheel: false});
 		self.geocoder = new google.maps.Geocoder();
 
-		var address = document.querySelector('h1').innerHTML;
+		var address = document.querySelector('input[type="hidden"]').value;
 		self._find_coordinates(address);
 	};
 

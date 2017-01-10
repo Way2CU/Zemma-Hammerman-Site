@@ -1,4 +1,6 @@
 <docuement>
+	<!-- hidden input for location object address -->
+	<input type="hidden" value="$params['name'][$language]" cms:eval="value"/>
 	<!-- Show waze link -->
 	<a
 		class="waze"
