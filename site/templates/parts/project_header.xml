@@ -47,11 +47,20 @@
 				<cms:text constant="menu_news"/>
 			</a>
 			<a
-				href="URL::make(array(), 'projects.xml')"
+				class="(isset($_REQUEST['category']) and ($_REQUEST['category'] == 'private')) ? 'active' : false"
+				href="URL::make(array('category' => 'private'), 'projects.xml')"
+				cms:optional="class"
 				cms:eval="href"
 				>
 				<cms:text constant="menu_projects"/>
 			</a>
+			<!-- show commercial projects category -->
+			<cms:module
+				name="shop"
+				action="show_category"
+				category="commercial"
+				template="parts/commercial_link.xml"
+				/>
 			<a
 				href="URL::make(array(), 'contact.xml')"
 				cms:eval="href"
