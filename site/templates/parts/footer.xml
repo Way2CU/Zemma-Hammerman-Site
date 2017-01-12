@@ -1,5 +1,13 @@
 <document>
 	<footer>
+		<!-- show commercial projects link -->
+		<cms:module
+			name="shop"
+			action="show_category"
+			category="commercial"
+			template="parts/commercial_link.xml"
+			/>
+
 		<nav class="footer_menu">
 			<a
 				class="URL::is_active('home.xml')"
