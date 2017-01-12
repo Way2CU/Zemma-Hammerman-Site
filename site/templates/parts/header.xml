@@ -64,7 +64,7 @@
 				>
 				<cms:text constant="menu_projects"/>
 			</a>
-			<!-- show commercial projects category -->
+			<!-- show commercial projects link -->
 			<cms:module
 				name="shop"
 				action="show_category"

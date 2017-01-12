@@ -1,0 +1,10 @@
+<docuement>
+	<cms:module
+		name="shop"
+		action="show_property"
+		text_id="address"
+		item="$params['id']"
+		template="parts/location_property.xml"
+		cms:eval="item"
+		/>
+</docuement>

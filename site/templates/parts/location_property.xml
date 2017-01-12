@@ -1,0 +1,12 @@
+<document>
+	<input type="hidden" value="$params['value'][$language]" cms:eval="value"/>
+
+	<!-- Show waze link -->
+	<a
+		class="waze"
+		href="'waze://?q='.$params['value'][$language].'&amp;navigate=yes'"
+		cms:eval="href"
+		>
+		<cms:svg file="site-sprite.svg" symbol="waze"/>
+	</a>
+</document>

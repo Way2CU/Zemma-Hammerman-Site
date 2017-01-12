@@ -39,13 +39,12 @@
 				name="shop"
 				action="show_item"
 				uid="$_REQUEST['name']"
-				template="parts/waze_link.xml"
+				template="parts/location.xml"
 				cms:eval="uid"
 			/>
 
 			<!-- Project location map-->
 			<div id="map"></div>
-
 
 			<!-- Project nav menu -->
 			<cms:template file="parts/project_footer_nav.xml"/>
