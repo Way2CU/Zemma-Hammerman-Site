@@ -9,7 +9,7 @@ Site.Map = function() {
 
 	self._init = function() {
 		self.maps = new google.maps.Map(document.getElementById('map'),
-			{zoom: 10, mapTypeControl: false, draggable: false, scrollwheel: false});
+			{zoom: 18, mapTypeControl: false, draggable: false, scrollwheel: false});
 		self.geocoder = new google.maps.Geocoder();
 
 		var address = document.querySelector('input[type="hidden"]').value;
