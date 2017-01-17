@@ -21,7 +21,7 @@
 						cms:eval="src"
 						/>
 					<a
-						href="'tel:'.urlencode(Language::get_Text('phone2'))"
+						href="'tel:'.urlencode(Language::get_Text('phone3'))"
 						cms:eval="href"
 						class="phone action"
 						>

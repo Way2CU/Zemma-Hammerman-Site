@@ -28,7 +28,7 @@
 					 />
 				<h4><cms:text constant="call_us_today" /></h4>
 					<a
-						href="'tel:'.urlencode(Language::get_Text('phone2'))"
+						href="'tel:'.urlencode(Language::get_Text('phone3'))"
 						cms:eval="href"
 						class="phone action"
 						>
