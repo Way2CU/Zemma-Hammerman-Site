@@ -60,6 +60,7 @@
 						action="show_property"
 						template="parts/project_form.xml"
 						item_uid="$_REQUEST['name']"
+						text_id="project"
 						cms:eval="item_uid"
 						/>
 				</div>
