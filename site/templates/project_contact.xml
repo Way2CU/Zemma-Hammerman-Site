@@ -14,7 +14,7 @@
 					uid="$_REQUEST['name']"
 					template="parts/page_title.xml"
 					cms:eval="uid"
-				/>
+					/>
 			</title>
 
 			<cms:collection  include="page_control"/>
@@ -22,9 +22,8 @@
 		</head>
 
 		<body class="contact project">
-
 			<!--  Shop item module call for project_header.xml -->
- 			<cms:module
+			<cms:module
 				name="shop"
 				action="show_item"
 				uid="$_REQUEST['name']"
@@ -33,9 +32,8 @@
 				/>
 
 			<section>
-
 				<!-- Shop module call for thumbnail group image -->
-	 			<cms:module
+				<cms:module
 					name="shop"
 					action="show_item"
 					uid="$_REQUEST['name']"
@@ -55,14 +53,16 @@
 				</a>
 				<div class="form_container">
 					<h5><cms:text constant="form_text" /></h5>
-					<!--  Form module call  -->
+
+					<!-- Show contact form -->
 					<cms:module
-						name="contact_form"
-						action="show"
-						text_id="project_contact_form"
+						name="shop"
+						action="show_property"
+						template="parts/project_form.xml"
+						item_uid="$_REQUEST['name']"
+						cms:eval="item_uid"
 						/>
 				</div>
-
 			</section>
 
 			<!-- Project nav menu -->
