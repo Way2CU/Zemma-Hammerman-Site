@@ -48,7 +48,6 @@
 
 			<cms:desktop>
 				<div id="screen">
-					<div id="content">
 						<!-- header -->
 						<!-- check url category param in order to specify correct title : either 'commercial' or 'private' -->
 						<cms:if condition="$_REQUEST['category'] == 'private'">
@@ -63,6 +62,7 @@
 							</cms:template>
 						</cms:if>
 						<!-- end-header -->
+					<div id="content">
 
 						<!-- shop_list_projects -->
 						<section>

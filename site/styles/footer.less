@@ -10,6 +10,7 @@ footer {
 	background-color: black;
 	text-align: center;
 	position: relative;
+	padding-bottom: 100px;
 }
 
 body.home footer {
@@ -34,6 +35,11 @@ footer nav.footer_menu a {
 	position: relative;
 	font-weight: 700;
 	width: calc(~'100% / 5');
+	transition: all 0.3s;
+
+	&:hover {
+		color: @color_red;
+	}
 }
 
 footer nav.footer_menu a:after {

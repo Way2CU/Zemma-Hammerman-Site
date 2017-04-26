@@ -52,11 +52,11 @@
 
 			<cms:desktop>
 				<div id="screen">
+					<!-- Top section of the site -->
+					<cms:template file="parts/header.xml">
+						<param name="title" value="menu_contact"/>
+					</cms:template>
 					<div id="content">
-						<!-- Top section of the site -->
-						<cms:template file="parts/header.xml">
-							<param name="title" value="menu_contact"/>
-						</cms:template>
 
 						<section>
 							<img

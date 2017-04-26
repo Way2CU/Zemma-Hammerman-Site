@@ -55,15 +55,15 @@
 
 			<cms:desktop>
 				<div id="screen">
+					<!--  Shop item module call for project_header.xml -->
+		 			<cms:module
+						name="shop"
+						action="show_item"
+						uid="$_REQUEST['name']"
+						template="parts/project_header.xml"
+						cms:eval="uid"
+					/>
 					<div id="content">
-						<!--  Shop item module call for project_header.xml -->
-			 			<cms:module
-							name="shop"
-							action="show_item"
-							uid="$_REQUEST['name']"
-							template="parts/project_header.xml"
-							cms:eval="uid"
-						/>
 
 			 			<cms:module
 							name="shop"
