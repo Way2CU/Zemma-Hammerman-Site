@@ -49,8 +49,8 @@ Site.is_mobile = function() {
  * Function called when document and images have been completely loaded.
  */
 Site.on_load = function() {
-	if (Site.is_mobile())
-		Site.mobile_menu = new Caracal.MobileMenu();
+
+	Site.mobile_menu = new Caracal.MobileMenu();
 
 	Site.home_page_menu = new PageControl('div.slider', 'img.image');
 	Site.home_page_menu
