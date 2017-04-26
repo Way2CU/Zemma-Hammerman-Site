@@ -12,6 +12,7 @@ var Site = Site || {};
 Site.Knob = function(container, knob, elements, project_names, link, title) {
 	var self = this;
 
+	self.active = false;
 	self.container = document.querySelector(container);
 	self.knob = self.container.querySelector(knob);
 	self.project_names = document.querySelectorAll(project_names);
@@ -128,12 +129,16 @@ Site.Knob = function(container, knob, elements, project_names, link, title) {
 		// prevent page from scrolling
 		event.preventDefault();
 
-		if (event instanceof MouseEvent) {
-			var touch = event;
-		} else {
+		// desktop compatibility
+		if (event instanceof MouseEvent)
+			var touch = event; else
 			var touch = event.touches[0];
-		}
+
+		// calculate initial angle
 		self.start_angle = self.calculate_angle(touch.pageX, touch.pageY);
+
+		// enable knob rotation
+		self.active = true;
 	}
 
 	/*
@@ -142,11 +147,12 @@ Site.Knob = function(container, knob, elements, project_names, link, title) {
 	 * @param object event.
 	 */
 	self.handle_touchmove = function(event) {
-		if (event instanceof MouseEvent) {
-			var touch = event;
-		} else {
+		if (!self.active)
+			return;
+
+		if (event instanceof MouseEvent)
+			var touch = event; else
 			var touch = event.touches[0];
-		}
 
 		self.current_angle = self.calculate_angle(touch.pageX, touch.pageY);
 
@@ -193,6 +199,9 @@ Site.Knob = function(container, knob, elements, project_names, link, title) {
 
 		self.knob_angle = project_index * angle_between_projects;
 		self.update_knob_rotation(self.knob_angle);
+
+		// disable knob rotation
+		self.active = false;
 	}
 
 	// finish object initialization
