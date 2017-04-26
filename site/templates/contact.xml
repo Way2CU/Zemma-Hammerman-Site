@@ -9,43 +9,85 @@
 				<cms:text constant="menu_contact"/>
 			</title>
 			<cms:collection  include="page_control"/>
+			<cms:collection include="page_control,mobile_menu,jquery_event_drag,jquery_event_scroll,scrollbar"/>
 			<cms:module name="head_tag" action="print_tag"/>
 		</head>
 
 		<body class="contact">
-			<!-- Top section of the site -->
-			<cms:template file="parts/header.xml">
-				<param name="title" value="menu_contact"/>
-			</cms:template>
+			<cms:mobile>
+				<!-- Top section of the site -->
+				<cms:template file="parts/header.xml">
+					<param name="title" value="menu_contact"/>
+				</cms:template>
 
-			<section>
+				<section>
 
-				<img
-					src="_BASEURL.'/site/images/logo-trans-grey.png'"
-					alt="site_title"
-					cms:constant="alt"
-					cms:eval="src"
-					 />
-				<h4><cms:text constant="call_us_today" /></h4>
-					<a
-						href="'tel:'.urlencode(Language::get_Text('phone3'))"
-						cms:eval="href"
-						class="phone action"
-						>
-						<cms:text constant="phone1" />
-						<cms:svg file="site-sprite.svg" symbol="phone"/>
-					</a>
-					<div class="form_container">
-						<h5><cms:text constant="form_text" /></h5>
-						<cms:module
-							name="contact_form"
-							action="show"
-							text_id="contact_form"
-						/>
+					<img
+						src="_BASEURL.'/site/images/logo-trans-grey.png'"
+						alt="site_title"
+						cms:constant="alt"
+						cms:eval="src"
+						 />
+					<h4><cms:text constant="call_us_today" /></h4>
+						<a
+							href="'tel:'.urlencode(Language::get_Text('phone3'))"
+							cms:eval="href"
+							class="phone action"
+							>
+							<cms:text constant="phone1" />
+							<cms:svg file="site-sprite.svg" symbol="phone"/>
+						</a>
+						<div class="form_container">
+							<h5><cms:text constant="form_text" /></h5>
+							<cms:module
+								name="contact_form"
+								action="show"
+								text_id="contact_form"
+							/>
+						</div>
+				</section>
+				<!-- Footer -->
+				<cms:template file="parts/footer.xml"/>
+			</cms:mobile>
+
+			<cms:desktop>
+				<div id="screen">
+					<div id="content">
+						<!-- Top section of the site -->
+						<cms:template file="parts/header.xml">
+							<param name="title" value="menu_contact"/>
+						</cms:template>
+
+						<section>
+							<img
+								src="_BASEURL.'/site/images/logo-trans-grey.png'"
+								alt="site_title"
+								cms:constant="alt"
+								cms:eval="src"
+								 />
+							<h4><cms:text constant="call_us_today" /></h4>
+								<a
+									href="'tel:'.urlencode(Language::get_Text('phone3'))"
+									cms:eval="href"
+									class="phone action"
+									>
+									<cms:text constant="phone1" />
+									<cms:svg file="site-sprite.svg" symbol="phone"/>
+								</a>
+								<div class="form_container">
+									<h5><cms:text constant="form_text" /></h5>
+									<cms:module
+										name="contact_form"
+										action="show"
+										text_id="contact_form"
+									/>
+								</div>
+						</section>
+						<!-- Footer -->
+						<cms:template file="parts/footer.xml"/>
 					</div>
-			</section>
-			<!-- Footer -->
-			<cms:template file="parts/footer.xml"/>
+				</div>
+			</cms:desktop>
 		</body>
 	</html>
 </document>

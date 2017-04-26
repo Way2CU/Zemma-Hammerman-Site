@@ -18,6 +18,7 @@
 			</title>
 
 			<cms:collection  include="page_control"/>
+			<cms:collection include="page_control,mobile_menu,jquery_event_drag,jquery_event_scroll,scrollbar"/>
 			<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyD6N7SKJX3LinSQYgjV9-7FP3Ap-TnZ41U"></script>
 			<cms:script src="_BASEURL.'/site/scripts/location.js'" cms:eval="src"/>
 			<cms:module name="head_tag" action="print_tag"/>
@@ -25,31 +26,63 @@
 
 
 		<body class="location">
+			<cms:mobile>
+				<!--  Shop item module call for project_header.xml -->
+	 			<cms:module
+					name="shop"
+					action="show_item"
+					uid="$_REQUEST['name']"
+					template="parts/project_header.xml"
+					cms:eval="uid"
+				/>
 
-			<!--  Shop item module call for project_header.xml -->
- 			<cms:module
-				name="shop"
-				action="show_item"
-				uid="$_REQUEST['name']"
-				template="parts/project_header.xml"
-				cms:eval="uid"
-			/>
+	 			<cms:module
+					name="shop"
+					action="show_item"
+					uid="$_REQUEST['name']"
+					template="parts/location.xml"
+					cms:eval="uid"
+				/>
 
- 			<cms:module
-				name="shop"
-				action="show_item"
-				uid="$_REQUEST['name']"
-				template="parts/location.xml"
-				cms:eval="uid"
-			/>
+				<!-- Project location map-->
+				<div id="map"></div>
 
-			<!-- Project location map-->
-			<div id="map"></div>
+				<!-- Project nav menu -->
+				<cms:template file="parts/project_footer_nav.xml"/>
+				<!-- Footer -->
+				<cms:template file="parts/footer.xml"/>
+			</cms:mobile>
 
-			<!-- Project nav menu -->
-			<cms:template file="parts/project_footer_nav.xml"/>
-			<!-- Footer -->
-			<cms:template file="parts/footer.xml"/>
+			<cms:desktop>
+				<div id="screen">
+					<div id="content">
+						<!--  Shop item module call for project_header.xml -->
+			 			<cms:module
+							name="shop"
+							action="show_item"
+							uid="$_REQUEST['name']"
+							template="parts/project_header.xml"
+							cms:eval="uid"
+						/>
+
+			 			<cms:module
+							name="shop"
+							action="show_item"
+							uid="$_REQUEST['name']"
+							template="parts/location.xml"
+							cms:eval="uid"
+						/>
+
+						<!-- Project location map-->
+						<div id="map"></div>
+
+						<!-- Project nav menu -->
+						<cms:template file="parts/project_footer_nav.xml"/>
+						<!-- Footer -->
+						<cms:template file="parts/footer.xml"/>
+					</div>
+				</div>
+			</cms:desktop>
 		</body>
 	</html>
 </document>

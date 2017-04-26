@@ -57,7 +57,7 @@
 				<cms:template file="parts/footer.xml"/>
 			</cms:mobile>
 
-			<cms:dekstop>
+			<cms:desktop>
 				<div id="screen">
 					<div id="content">
 						<!--  Shop item module call for project_header.xml -->
@@ -85,7 +85,7 @@
 						<cms:template file="parts/footer.xml"/>
 					</div>
 				</div>
-			</cms:dekstop>
+			</cms:desktop>
 		</body>
 	</html>
 </document>

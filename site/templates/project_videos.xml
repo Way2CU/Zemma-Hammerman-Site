@@ -18,36 +18,70 @@
 			</title>
 
 			<cms:collection  include="page_control"/>
+			<cms:collection include="page_control,mobile_menu,jquery_event_drag,jquery_event_scroll,scrollbar"/>
 			<cms:module name="head_tag" action="print_tag"/>
 		</head>
 
 		<body class="video">
-
-			<!--  Shop item module call for project_header.xml -->
- 			<cms:module
-				name="shop"
-				action="show_item"
-				uid="$_REQUEST['name']"
-				template="parts/project_header.xml"
-				cms:eval="uid"
-				/>
-
-			<!--  Shop item module to call videos -->
-			<section>
+			<cms:mobile>
+				<!--  Shop item module call for project_header.xml -->
 	 			<cms:module
 					name="shop"
 					action="show_item"
 					uid="$_REQUEST['name']"
-					template="parts/project_video_list.xml"
+					template="parts/project_header.xml"
 					cms:eval="uid"
 					/>
-			</section>
 
-			<!-- Project nav menu -->
-			<cms:template file="parts/project_footer_nav.xml"/>
+				<!--  Shop item module to call videos -->
+				<section>
+		 			<cms:module
+						name="shop"
+						action="show_item"
+						uid="$_REQUEST['name']"
+						template="parts/project_video_list.xml"
+						cms:eval="uid"
+						/>
+				</section>
 
-			<!-- Footer -->
-			<cms:template file="parts/footer.xml"/>
+				<!-- Project nav menu -->
+				<cms:template file="parts/project_footer_nav.xml"/>
+
+				<!-- Footer -->
+				<cms:template file="parts/footer.xml"/>
+			</cms:mobile>
+
+			<cms:desktop>
+				<div id="screen">
+					<div id="content">
+						<!--  Shop item module call for project_header.xml -->
+			 			<cms:module
+							name="shop"
+							action="show_item"
+							uid="$_REQUEST['name']"
+							template="parts/project_header.xml"
+							cms:eval="uid"
+							/>
+
+						<!--  Shop item module to call videos -->
+						<section>
+				 			<cms:module
+								name="shop"
+								action="show_item"
+								uid="$_REQUEST['name']"
+								template="parts/project_video_list.xml"
+								cms:eval="uid"
+								/>
+						</section>
+
+						<!-- Project nav menu -->
+						<cms:template file="parts/project_footer_nav.xml"/>
+
+						<!-- Footer -->
+						<cms:template file="parts/footer.xml"/>
+					</div>
+				</div>
+			</cms:desktop>
 		</body>
 	</html>
 </document>
