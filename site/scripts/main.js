@@ -49,13 +49,17 @@ Site.is_mobile = function() {
  * Function called when document and images have been completely loaded.
  */
 Site.on_load = function() {
-
+	// create mobile menu
 	Site.mobile_menu = new Caracal.MobileMenu();
 
+	// create slider
 	Site.home_page_menu = new PageControl('div.slider', 'img.image');
 	Site.home_page_menu
 		.setWrapAround(true)
 		.attachControls('div#controls span.control');
+
+	// make our own scrollbar
+	Site.scrollbar = new Scrollbar('div#screen', 'div#content');
 };
 
 

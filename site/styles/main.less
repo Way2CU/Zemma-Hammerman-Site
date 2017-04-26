@@ -5,22 +5,22 @@
  * Copyright (c) 2016. by Way2CU, http://way2cu.com
  * Authors:Tal Reznic
  */
+@screen_height: 814px;
+@screen_width: 454px;
+
 @import "common.less";
+@import "header.less";
 @import "content.less";
+@import "footer.less";
+@import (css)'stock/copyright.css';
+
 
 body {
-	background-color: @color_text;
+	background-color: white;
+	background-image: url(../images/background.jpg);
+	background-repeat: no-repeat;
+	background-position: center top;
 	font-family: 'fontbit', sans-serif;
-}
-
-body.home {
-	background:
-	    radial-gradient(50% 50%, rgba(24, 16, 18, 0.7) 0%, rgba(0, 0, 0, 1) 100%),
-	    url(../images/pattern.png);
-	background-repeat: no-repeat, repeat;
-	background-position: center center, center center;
-	background-size: 100% auto, 15px 15px;
-	height: 100vh;
 }
 
 input,
@@ -37,4 +37,37 @@ h4,
 h5 {
 	font-family: 'Arimo', sans-serif;
 	font-weight: 700;
+}
+
+div#screen {
+	position: relative;
+	width: @screen_width;
+	height: @screen_height;
+	max-height: 100vh;
+	margin-top: 130px;
+	margin-left: auto;
+	margin-right: auto;
+
+	overflow: hidden;
+	background-color: white;
+
+	body.home & {
+		background-image:
+		radial-gradient(circle closest-side at 50% 50%, rgba(24, 16, 18, 0.7) 0%, rgba(0, 0, 0, 1) 100%),
+		url(../images/pattern.png);
+		background-repeat: no-repeat, repeat;
+		background-position: center 90%, center center;
+		background-size: 100% auto, 15px 15px;
+	}
+
+	div.scrollbar_thumb {
+		width: 5px;
+		border-radius: 0 2px 2px 0;
+		background-color: black;
+		z-index: 2000000;
+
+		body.home & {
+			background-color: white;
+		}
+	}
 }

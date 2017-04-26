@@ -14,7 +14,7 @@
 					uid="$_REQUEST['name']"
 					template="parts/page_title.xml"
 					cms:eval="uid"
-				/>
+					/>
 			</title>
 			<!-- Page description -->
 			<cms:module
@@ -23,14 +23,13 @@
 				uid="$_REQUEST['name']"
 				template="parts/page_description.xml"
 				cms:eval="uid"
-			/>
+				/>
 			<cms:collection  include="page_control"/>
 			<cms:script src="_BASEURL.'/site/scripts/expand.js'" cms:eval="src"/>
 			<cms:module name="head_tag" action="print_tag"/>
 		</head>
 
 		<body class="about">
-
 			<!--  Shop item module call for project_header.xml -->
 			<cms:module
 				name="shop"
@@ -38,7 +37,7 @@
 				uid="$_REQUEST['name']"
 				template="parts/project_header.xml"
 				cms:eval="uid"
-			/>
+				/>
 
 			<!--  about article -->
 			<cms:module

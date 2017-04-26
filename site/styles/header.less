@@ -1,0 +1,123 @@
+/**
+ * Mobile header Style Sheet
+ * Zemah hamerman site
+ *
+ * Copyright (c) 2016. by Way2CU, http://way2cu.com
+ * Authors:Tal Reznic, Iliya Melishev
+ */
+
+
+div.mobile_title {
+	position: absolute !important;
+	background-color: fade(@color_text, 50%);
+	height: 3.5em;
+}
+
+div.mobile_title a svg {
+	display: block;
+	width: 1.8em;
+	height: 1.8em;
+	fill: @color_background;
+}
+
+div.mobile_title {
+	background-color: fade(@color_text, 50%);
+	height: 3.5em;
+}
+
+div.mobile_title:before {
+	content: "";
+	display: inline-block;
+	vertical-align: middle;
+	height: 100%;
+}
+
+div.mobile_title a {
+	position: absolute;
+	padding: 0.5em;
+	top: 50%;
+	left: 0;
+	transform: translatey(-50%);
+}
+
+div.mobile_title a.show_project {
+	text-decoration: none;
+	position: absolute;
+	padding: 0.5em 2em;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: @color_background;
+	font-size: 1.8em;
+	visibility: hidden;
+}
+
+div.mobile_title a.show_project:before {
+	content: ">>";
+	position: absolute;
+	top: 50%;
+	right: calc(~'100% - 1.8em');
+	transform: translatey(-50%);
+}
+
+header div.mobile_title a.logo_symbol,
+div.mobile_title a.phone {
+	left: auto;
+	right: 0;
+}
+
+div.mobile_title h1 {
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0;
+	padding-right: 2em;
+	font-size: 1.5em;
+	font-weight: 400;
+}
+
+nav.mobile_menu {
+	position: absolute !important;
+	right: -100%;
+	text-align: center;
+	background-color: @color_grey;
+	overflow-y: scroll;
+}
+
+nav.mobile_menu.visible {
+	right: 0;
+	width: 100%;
+}
+
+nav.mobile_menu a {
+	padding: 1.2em 1em;
+	font-weight: 700;
+	color: @color_background;
+	border-bottom: 1px solid @color_background;
+}
+
+nav.mobile_menu a.active {
+	background-color: @color_red;
+}
+
+/*
+*Project menu nav header spesific style
+*/
+
+header.project_header div {
+	background-color: white;
+}
+
+header.project_header div > h1 {
+	color: @color_text;
+	font-size: 1.5em;
+	font-weight: 400;
+}
+
+header.project_header div > a svg {
+	fill: @color_text;
+}
+
+header.project_header div.mobile_title a.logo_symbol svg {
+	width: 2em;
+	height: 2em;
+}
