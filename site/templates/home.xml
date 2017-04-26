@@ -5,13 +5,14 @@
 		<head>
 			<title><cms:text constant="site_title"/></title>
 			<cms:collection  include="page_control"/>
+			<cms:collection include="mobile_menu"/>
 			<cms:script src="_BASEURL.'/site/scripts/knob_rotate.js'" cms:eval="src"/>
 			<cms:module name="head_tag" action="print_tag"/>
 		</head>
 
 		<body class="home">
 			<!-- Temporary desktop home page version -->
-			<cms:desktop>
+			<!-- <cms:desktop>
 				<section>
 					<p><cms:text constant="desktop_home_page_title"/></p>
 					<img
@@ -31,9 +32,9 @@
 					<h1><cms:text constant="home_page_title"/></h1>
 					<p><cms:text constant="desktop_show_mobile_text"/></p>
 				</section>
-			</cms:desktop>
+			</cms:desktop> -->
 
-			<cms:mobile>
+				<cms:mobile>
 				<!-- Top section of the site -->
 				<cms:template file="parts/header.xml"/>
 
@@ -73,6 +74,52 @@
 
 				<cms:template file="parts/footer.xml"/>
 			</cms:mobile>
+
+				<cms:desktop>
+					<div class="phone">
+						<div class="phone_screen">
+							<!-- Top section of the site -->
+							<cms:template file="parts/header.xml"/>
+
+							<div class="slider">
+								<!-- Manual about zema hamerman image -->
+								<img
+									class="image"
+									data-name="home_page_title"
+									data-url="about_us_link"
+									src="_BASEURL.'/site/images/hamerman-logo-small.jpg'"
+									alt="menu_about"
+									cms:constant="data-name,alt,data-url"
+									cms:eval="src"
+									/>
+								<input type="hidden" value="home_page_title" cms:constant="value"/>
+
+								<cms:module
+									name="shop"
+									action="show_item_list"
+									category="private"
+									order_by="priority"
+									template="parts/slider_images.xml"
+									/>
+							</div>
+
+							<section>
+								<h1></h1>
+								<a class="show_project action" href="#">
+									<cms:text constant="button_show_project"/>
+								</a>
+
+								<div id="controls">
+									<div class="knob">
+									</div>
+								</div>
+							</section>
+
+							<!-- Footer -->
+							<cms:template file="parts/footer.xml"/>
+						</div>
+					</div>
+			</cms:desktop>
 		</body>
 	</html>
 </document>
