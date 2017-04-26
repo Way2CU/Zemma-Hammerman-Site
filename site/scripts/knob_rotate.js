@@ -92,6 +92,10 @@ Site.Knob = function(container, knob, elements, project_names, link, title) {
 		self.knob.addEventListener('touchstart', self.handle_touchstart);
 		self.knob.addEventListener('touchmove', self.handle_touchmove);
 		self.knob.addEventListener('touchend', self.handle_touchend);
+
+		self.knob.addEventListener('mousedown', self.handle_touchstart);
+		self.knob.addEventListener('mousemove', self.handle_touchmove);
+		self.knob.addEventListener('mouseup', self.handle_touchend);
 	}
 
 	self.handle_label = function() {
@@ -124,7 +128,11 @@ Site.Knob = function(container, knob, elements, project_names, link, title) {
 		// prevent page from scrolling
 		event.preventDefault();
 
-		var touch = event.touches[0];
+		if (event instanceof MouseEvent) {
+			var touch = event;
+		} else {
+			var touch = event.touches[0];
+		}
 		self.start_angle = self.calculate_angle(touch.pageX, touch.pageY);
 	}
 
@@ -134,7 +142,12 @@ Site.Knob = function(container, knob, elements, project_names, link, title) {
 	 * @param object event.
 	 */
 	self.handle_touchmove = function(event) {
-		var touch = event.touches[0];
+		if (event instanceof MouseEvent) {
+			var touch = event;
+		} else {
+			var touch = event.touches[0];
+		}
+
 		self.current_angle = self.calculate_angle(touch.pageX, touch.pageY);
 
 		var angle_between_projects = (2 * Math.PI) / self.elements.length;
@@ -187,6 +200,5 @@ Site.Knob = function(container, knob, elements, project_names, link, title) {
 }
 
 $(function() {
-	if(Site.is_mobile())
-		Site.rotate = new Site.Knob('div#controls', 'div.knob', 'div.slider img','div.slider input', 'a.show_project', 'section h1');
+	Site.rotate = new Site.Knob('div#controls', 'div.knob', 'div.slider img','div.slider input', 'a.show_project', 'section h1');
 })
