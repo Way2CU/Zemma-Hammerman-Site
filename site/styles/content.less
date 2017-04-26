@@ -324,6 +324,15 @@ nav#project_nav a {
 	width: calc(~'100% / 6');
 	text-decoration: none;
 	color: @color_grey;
+	transition: all 0.3s;
+}
+
+nav#project_nav a:not(.phone):hover {
+	background-color: @color_red;
+	color: white;
+		svg {
+			fill: white;
+		}
 }
 
 nav#project_nav a.active {
