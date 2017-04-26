@@ -9,40 +9,78 @@
 				<cms:text constant="menu_projects"/>
 			</title>
 			<cms:collection  include="page_control"/>
+			<cms:collection include="page_control,mobile_menu,jquery_event_drag,jquery_event_scroll,scrollbar"/>
 			<cms:module name="head_tag" action="print_tag"/>
 		</head>
 
 		<body class="projects">
+			<cms:mobile>
+				<!-- header -->
+				<!-- check url category param in order to specify correct title : either 'commercial' or 'private' -->
+				<cms:if condition="$_REQUEST['category'] == 'private'">
+					<cms:template file="parts/header.xml">
+						<param name="title" value="menu_projects"/>
+					</cms:template>
+				</cms:if>
 
-			<!-- header -->
-			<!-- check url category param in order to specify correct title : either 'commercial' or 'private' -->
-			<cms:if condition="$_REQUEST['category'] == 'private'">
-				<cms:template file="parts/header.xml">
-					<param name="title" value="menu_projects"/>
-				</cms:template>
-			</cms:if>
+				<cms:if condition="$_REQUEST['category'] == 'commercial'">
+					<cms:template file="parts/header.xml">
+						<param name="title" value="menu_commercial_projects"/>
+					</cms:template>
+				</cms:if>
+				<!-- end-header -->
 
-			<cms:if condition="$_REQUEST['category'] == 'commercial'">
-				<cms:template file="parts/header.xml">
-					<param name="title" value="menu_commercial_projects"/>
-				</cms:template>
-			</cms:if>
-			<!-- end-header -->
+				<!-- shop_list_projects -->
+				<section>
+					<cms:module
+						name="shop"
+						action="show_item_list"
+						category="$_REQUEST['category']"
+						order_by="priority"
+						template="parts/projects_list.xml"
+						cms:eval="category"
+					/>
+				</section>
 
-			<!-- shop_list_projects -->
-			<section>
-				<cms:module
-					name="shop"
-					action="show_item_list"
-					category="$_REQUEST['category']"
-					order_by="priority"
-					template="parts/projects_list.xml"
-					cms:eval="category"
-				/>
-			</section>
+				<!-- footer -->
+				<cms:template file="parts/footer.xml"/>
+			</cms:mobile>
 
-			<!-- footer -->
-			<cms:template file="parts/footer.xml"/>
+			<cms:desktop>
+				<div id="screen">
+					<div id="content">
+						<!-- header -->
+						<!-- check url category param in order to specify correct title : either 'commercial' or 'private' -->
+						<cms:if condition="$_REQUEST['category'] == 'private'">
+							<cms:template file="parts/header.xml">
+								<param name="title" value="menu_projects"/>
+							</cms:template>
+						</cms:if>
+
+						<cms:if condition="$_REQUEST['category'] == 'commercial'">
+							<cms:template file="parts/header.xml">
+								<param name="title" value="menu_commercial_projects"/>
+							</cms:template>
+						</cms:if>
+						<!-- end-header -->
+
+						<!-- shop_list_projects -->
+						<section>
+							<cms:module
+								name="shop"
+								action="show_item_list"
+								category="$_REQUEST['category']"
+								order_by="priority"
+								template="parts/projects_list.xml"
+								cms:eval="category"
+							/>
+						</section>
+
+						<!-- footer -->
+						<cms:template file="parts/footer.xml"/>
+					</div>
+				</div>
+			</cms:desktop>
 		</body>
 	</html>
 </document>

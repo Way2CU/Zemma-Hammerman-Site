@@ -25,34 +25,67 @@
 				cms:eval="uid"
 				/>
 			<cms:collection  include="page_control"/>
+			<cms:collection include="page_control,mobile_menu,jquery_event_drag,jquery_event_scroll,scrollbar"/>
 			<cms:script src="_BASEURL.'/site/scripts/expand.js'" cms:eval="src"/>
 			<cms:module name="head_tag" action="print_tag"/>
 		</head>
 
 		<body class="about">
-			<!--  Shop item module call for project_header.xml -->
-			<cms:module
-				name="shop"
-				action="show_item"
-				uid="$_REQUEST['name']"
-				template="parts/project_header.xml"
-				cms:eval="uid"
-				/>
+			<cms:mobile>
+				<!--  Shop item module call for project_header.xml -->
+				<cms:module
+					name="shop"
+					action="show_item"
+					uid="$_REQUEST['name']"
+					template="parts/project_header.xml"
+					cms:eval="uid"
+					/>
 
-			<!--  about article -->
-			<cms:module
-				name="shop"
-				action="show_item"
-				uid="$_REQUEST['name']"
-				template="parts/information.xml"
-				cms:eval="uid"
-				/>
+				<!--  about article -->
+				<cms:module
+					name="shop"
+					action="show_item"
+					uid="$_REQUEST['name']"
+					template="parts/information.xml"
+					cms:eval="uid"
+					/>
 
-			<!-- Project nav menu -->
-			<cms:template file="parts/project_footer_nav.xml"/>
+				<!-- Project nav menu -->
+				<cms:template file="parts/project_footer_nav.xml"/>
 
-			<!-- Footer -->
-			<cms:template file="parts/footer.xml"/>
+				<!-- Footer -->
+				<cms:template file="parts/footer.xml"/>
+			</cms:mobile>
+
+			<cms:dekstop>
+				<div id="screen">
+					<div id="content">
+						<!--  Shop item module call for project_header.xml -->
+						<cms:module
+							name="shop"
+							action="show_item"
+							uid="$_REQUEST['name']"
+							template="parts/project_header.xml"
+							cms:eval="uid"
+							/>
+
+						<!--  about article -->
+						<cms:module
+							name="shop"
+							action="show_item"
+							uid="$_REQUEST['name']"
+							template="parts/information.xml"
+							cms:eval="uid"
+							/>
+
+						<!-- Project nav menu -->
+						<cms:template file="parts/project_footer_nav.xml"/>
+
+						<!-- Footer -->
+						<cms:template file="parts/footer.xml"/>
+					</div>
+				</div>
+			</cms:dekstop>
 		</body>
 	</html>
 </document>
