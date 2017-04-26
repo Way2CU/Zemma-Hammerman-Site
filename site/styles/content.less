@@ -234,6 +234,12 @@ div.form_container form label input {
 	display: block;
 	box-sizing: border-box;
 	width: 100%;
+	transition: all 0.3s;
+
+	&:hover,
+	&focus {
+		border: 1px solid @color_red;
+	}
 }
 
 div.form_container form label span {
