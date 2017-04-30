@@ -115,8 +115,6 @@
 								</div>
 							</div>
 						</section>
-
-						<p style="height: 100px"/>
 						<!-- Footer -->
 						<cms:template file="parts/footer.xml"/>
 					</div>

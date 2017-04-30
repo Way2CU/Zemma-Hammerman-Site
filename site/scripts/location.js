@@ -1,7 +1,7 @@
 // create or use existing site scope
 var Site = Site || new Object();
 
-Site.Map = function() {
+Site.Map = function(is_draggable, is_scroll) {
 	var self = this;
 
 	self.maps = null;
@@ -9,7 +9,7 @@ Site.Map = function() {
 
 	self._init = function() {
 		self.maps = new google.maps.Map(document.getElementById('map'),
-			{zoom: 18, mapTypeControl: false, draggable: false, scrollwheel: false});
+			{zoom: 18, mapTypeControl: false, draggable: is_draggable, scrollwheel: is_scroll});
 		self.geocoder = new google.maps.Geocoder();
 
 		var address = document.querySelector('input[type="hidden"]').value;
@@ -40,6 +40,11 @@ Site.Map = function() {
 	self._init();
 }
 
+
 $(function() {
-		Site.map = new Site.Map();
+	if (Site.is_mobile()) {
+		Site.map = new Site.Map(false, false);
+	} else {
+		Site.map_desktop = new Site.Map(true, true);
+	}
 });

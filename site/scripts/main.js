@@ -60,6 +60,9 @@ Site.on_load = function() {
 
 	// make our own scrollbar
 	Site.scrollbar = new Scrollbar('div#screen', 'div#content');
+
+	//Lightbox
+	Site.gallery = new LightBox('body.gallery section a', false, false, true);
 };
 
 
