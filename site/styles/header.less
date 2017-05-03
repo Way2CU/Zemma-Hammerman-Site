@@ -78,9 +78,11 @@ div.mobile_title h1 {
 nav.mobile_menu {
 	position: absolute !important;
 	right: -100%;
+	top: 56px;
 	text-align: center;
 	background-color: @color_grey;
 	overflow-y: scroll;
+	height: 100vh;
 }
 
 nav.mobile_menu.visible {
@@ -89,6 +91,7 @@ nav.mobile_menu.visible {
 }
 
 nav.mobile_menu a {
+	display: block;
 	padding: 1.2em 1em;
 	font-weight: 700;
 	color: @color_background;
