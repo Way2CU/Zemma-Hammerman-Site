@@ -147,6 +147,9 @@ class zema extends Module {
 		curl_setopt($handle, CURLOPT_USERAGENT, 'Caracal '._VERSION);
 		$response = curl_exec($handle);
 		curl_close($handle);
+
+		if ($response === FALSE || $response == '0')
+			error_log('Failed submission for `'.$project_name.'` on API.', E_USER_NOTICE);
 	}
 }
 
