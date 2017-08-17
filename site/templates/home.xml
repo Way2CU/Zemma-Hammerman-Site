@@ -10,9 +10,9 @@
 		</head>
 
 		<body class="home">
-			<!-- Temporary desktop home page version -->
+			<!-- Temporary disable desktop home page version -->
 			<!--
-				 <cms:desktop>
+			<cms:desktop>
 				<section>
 					<p><cms:text constant="desktop_home_page_title"/></p>
 					<img
