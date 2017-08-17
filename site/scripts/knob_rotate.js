@@ -26,6 +26,7 @@ Site.Knob = function(container, knob, elements, project_names, link, title) {
 	    y: self.rect.top + (self.rect.height / 2)
 	};
 	self.link_element = document.querySelector(link);
+	console.log(self.link_element);
 	self.title_element = document.querySelector(title);
 	self.start_angle = 0;
 	self.end_angle = 0;
@@ -60,9 +61,9 @@ Site.Knob = function(container, knob, elements, project_names, link, title) {
 			var x = Math.cos(angle);
 			var y = Math.sin(angle);
 
-			if(self.container_center.x < (self.container_center.x + self.radius_x * x)) {
+			if (self.container_center.x < (self.container_center.x + self.radius_x * x)) {
 				label_item.classList.add('left');
-			} else if(self.container_center.x > (self.container_center.x + self.radius_x * x)) {
+			} else if (self.container_center.x > (self.container_center.x + self.radius_x * x)) {
 				label_item.classList.add('right');
 			} else {
 				label_item.classList.add('center');
@@ -71,7 +72,7 @@ Site.Knob = function(container, knob, elements, project_names, link, title) {
 			menu_item.style.position = 'absolute';
 			menu_item.style.left = self.container_center.x + (self.radius_x - 15) * x + 'px';
 			menu_item.style.top = self.container_center.y + (self.radius_y - 15) * y + 'px';
-			menu_item.style.transform = "translate(-50%, -50%)";
+			menu_item.style.transform = 'translate(-50%, -50%)';
 
 			angle += angle_increment;
 
@@ -84,7 +85,7 @@ Site.Knob = function(container, knob, elements, project_names, link, title) {
 		self.container.children[1].style.display = 'none';
 
 		// assign default href attribute to link element
-		self.link_element.setAttribute("href", self.url_paths[0]);
+		self.link_element.setAttribute('href', self.url_paths[0]);
 
 		// assign default title to element displaying title of project
 		self.title_element.innerHTML = self.project_title[0];
@@ -103,7 +104,7 @@ Site.Knob = function(container, knob, elements, project_names, link, title) {
 		var angle_between_projects = (2 * Math.PI) / self.elements.length;
 		var index = Array.prototype.indexOf.call(this.parentNode.childNodes, this) - 1;
 		var path = self.url_paths[index];
-		self.link_element.setAttribute("href", path);
+		self.link_element.setAttribute('href', path);
 		self.title_element.innerHTML = self.project_title[index];
 		self.link_element.style.visibility = 'visible';
 		self.knob_angle = angle_between_projects * index;
@@ -191,7 +192,7 @@ Site.Knob = function(container, knob, elements, project_names, link, title) {
 		Site.home_page_menu.showPage(project_index);
 		var path = self.url_paths[project_index];
 		self.link_element.style.visibility = 'visible';
-		self.link_element.setAttribute("href", path);
+		self.link_element.setAttribute('href', path);
 		self.title_element.innerHTML = self.project_title[project_index];
 
 		if(project_index == 0)
@@ -209,5 +210,12 @@ Site.Knob = function(container, knob, elements, project_names, link, title) {
 }
 
 $(function() {
-	Site.rotate = new Site.Knob('div#controls', 'div.knob', 'div.slider img','div.slider input', 'a.show_project', 'section h1');
+	Site.rotate = new Site.Knob(
+			'div#controls',     // container for controls
+			'div.knob',         // rotating element of the controls
+			'div.slider img',   // images
+			'div.slider input', // project names
+			'a.open_project',   // open project link
+			'section h1'        // project title
+		);
 })

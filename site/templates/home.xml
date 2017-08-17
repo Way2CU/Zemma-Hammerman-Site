@@ -59,17 +59,17 @@
 						order_by="priority"
 						template="parts/slider_images.xml"
 						/>
+
+					<a class="open_project action"><cms:text constant="button_open_project"/></a>
 				</div>
 
 				<section>
+					<!-- Project title container -->
 					<h1></h1>
-					<a class="show_project action" href="#">
-						<cms:text constant="button_show_project"/>
-					</a>
 
+					<!-- Project selection controls -->
 					<div id="controls">
-						<div class="knob">
-						</div>
+						<div class="knob"/>
 					</div>
 				</section>
 
@@ -102,6 +102,8 @@
 								order_by="priority"
 								template="parts/slider_images.xml"
 								/>
+
+							<a class="open_project action"><cms:text constant="button_open_project"/></a>
 						</div>
 
 						<section>

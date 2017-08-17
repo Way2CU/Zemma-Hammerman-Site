@@ -158,10 +158,19 @@ div#controls div.knob {
 	transform: translate(-50%, -50%);
 }
 
-/*
-*Contact Page
-*/
+a.open_project {
+	position: absolute;
+	bottom: 1rem;
+	left: 50%;
 
+	text-align: center;
+	transform: translate(-50%);
+	visibility: hidden;
+}
+
+/**
+ * Contact page
+ */
 body.contact section {
 	text-align: center;
 	padding: 0.5em;
@@ -211,8 +220,8 @@ body.contact section a svg {
 }
 
 /*
-*Form style
-*/
+ *Form style
+ */
 
 div.form_container {
 	display: block;
@@ -276,8 +285,8 @@ div.form_container div.controls button{
 }
 
 /*
-*Projects Page
-*/
+ *Projects Page
+ */
 
 .projects section {
 	text-align: center;
@@ -304,8 +313,8 @@ div.form_container div.controls button{
 }
 
 /*
-*Projects nav
-*/
+ *Projects nav
+ */
 
 nav#project_nav {
 	display: block;
@@ -352,8 +361,8 @@ nav#project_nav a.phone svg {
 }
 
 /*
-*Project About page
-*/
+ *Project About page
+ */
 
 .about section {
 	background-repeat: no-repeat;
@@ -417,8 +426,8 @@ nav#project_nav a.phone svg {
 }
 
 /*
-*Project gallery page
-*/
+ *Project gallery page
+ */
 
 .gallery section > a {
 	display: block;
@@ -433,8 +442,8 @@ nav#project_nav a.phone svg {
 }
 
 /*
-*Project video page
-*/
+ *Project video page
+ */
 
 body.video section div.video {
 	display: block;
@@ -444,8 +453,8 @@ body.video section div.video {
 }
 
 /*
-*Project location page
-*/
+ *Project location page
+ */
 
 div#map {
 	width: 100vw;
@@ -480,8 +489,8 @@ a.waze svg {
 div.dialog div.title {
 	text-align: center;
 	background-image:
-	  url(../images/logo-symbol.svg),
-	  linear-gradient(@color_bright_red,@color_red);
+	url(../images/logo-symbol.svg),
+	linear-gradient(@color_bright_red,@color_red);
 	background-repeat: no-repeat;
 	background-position: left center, center top;
 	background-size: 30% auto, 100% auto;

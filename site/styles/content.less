@@ -113,6 +113,13 @@ div#controls span.control > span {
 	transform: translatex(-50%);
 	width: 200px;
 	cursor: pointer;
+
+	// disable selection fo control text
+	-webkit-user-select: none; /* Safari */
+	-khtml-user-select: none; /* Konqueror HTML */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none;
 }
 
 div#controls span.control:first-of-type > span.center {
@@ -155,8 +162,18 @@ div#controls div.knob {
 	transform: translate(-50%, -50%);
 }
 
-/*
- *Contact Page
+a.open_project {
+	position: absolute;
+	bottom: 1rem;
+	left: 50%;
+
+	text-align: center;
+	transform: translate(-50%);
+	visibility: hidden;
+}
+
+/**
+ * Contact Page
  */
 
 body.contact section {
@@ -332,9 +349,9 @@ nav#project_nav a {
 nav#project_nav a:not(.phone):hover {
 	background-color: @color_red;
 	color: white;
-		svg {
-			fill: white;
-		}
+	svg {
+		fill: white;
+	}
 }
 
 nav#project_nav a.active {
@@ -489,7 +506,6 @@ a.waze svg {
 /*
  * Dialog
  */
-
 div.dialog div.title {
 	text-align: center;
 	background-image:
