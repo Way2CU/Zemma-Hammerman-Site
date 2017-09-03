@@ -26,7 +26,6 @@ Site.Knob = function(container, knob, elements, project_names, link, title) {
 	    y: self.rect.top + (self.rect.height / 2)
 	};
 	self.link_element = document.querySelector(link);
-	console.log(self.link_element);
 	self.title_element = document.querySelector(title);
 	self.start_angle = 0;
 	self.end_angle = 0;
