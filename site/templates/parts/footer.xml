@@ -7,6 +7,12 @@
 			category="commercial"
 			template="parts/commercial_link.xml"
 			/>
+		<a
+			href="investor_relations_link"
+			cms:constant="href"
+			>
+			<cms:text constant="menu_relations"/>
+		</a>
 
 		<nav class="footer_menu">
 			<a
