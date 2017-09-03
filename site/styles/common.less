@@ -25,6 +25,28 @@
 @color_text: black;
 @color_background: white;
 
+@keyframes attention {
+	0% {
+		opacity: 0;
+		left: 2rem;
+	}
+
+	60% {
+		opacity: 1;
+		left: 0;
+	}
+
+	80% {
+		opacity: 0;
+		left: 0;
+	}
+
+	100% {
+		opacity: 0;
+		left: 0;
+	}
+}
+
 button[type="submit"],
 .action {
 	padding: 0.5em 1em;
