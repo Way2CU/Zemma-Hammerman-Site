@@ -11,6 +11,7 @@
 	"menu_projects": "פרויקטים",
 	"menu_commercial_projects": "פרויקטים מסחר להשכרה",
 	"menu_contact": "צור קשר",
+	"menu_relations": "משקיעים קשרי",
 	"phone1" : "3066*",
 	"phone2" : "*3066",
 	"phone3": "1599503066",
@@ -26,5 +27,6 @@
 	"button_close": "סגור >>",
 	"button_open_project": "פרויקטים",
 	"about_us_link": "http://duns100.globes.co.il/companies-1000855373",
-	"news_link": "https://www.facebook.com/zhg.group/?fref=ts"
+	"news_link": "https://www.facebook.com/zhg.group/?fref=ts",
+	"investor_relations_link": "http://ir.zhg.co.il"
 }
