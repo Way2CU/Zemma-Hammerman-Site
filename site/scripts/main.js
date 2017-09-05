@@ -46,6 +46,96 @@ Site.is_mobile = function() {
 };
 
 /**
+ * Mobile phone scroll emulation.
+ *
+ * @param string screen_selector
+ * @param string content_selector
+ */
+Site.MobileScroll = function(screen_selector, content_selector) {
+	var self = this;
+
+	self.screen = null;
+	self.content = null;
+	self.drag_offset = 0;
+	self.initial_position = 0;
+
+	self.handler = new Object();
+
+	/**
+	 * Complete object initialization.
+	 */
+	self._init = function() {
+		self.screen = document.querySelector(screen_selector);
+		self.content = document.querySelector(content_selector);
+
+		// attach event listeners
+		self.screen.addEventListener('mousedown', self.handler.mouse_down);
+		self.screen.addEventListener('wheel', self.handler.mouse_scroll);
+	};
+
+	/**
+	 * Handle mouse press.
+	 * @param object event
+	 */
+	self.handler.mouse_down = function(event) {
+		self.drag_offset = event.clientY;
+		self.screen.addEventListener('mouseup', self.handler.mouse_up);
+		self.screen.addEventListener('mousemove', self.handler.mouse_move);
+	};
+
+	/**
+	 * Handle mouse press.
+	 * @param object event
+	 */
+	self.handler.mouse_move = function(event) {
+		var offset = self.initial_position + (event.clientY - self.drag_offset);
+
+		// don't allow scroll above top
+		if (offset > 0)
+			return;
+
+		// don't allow scroll after page is completely visible
+		if (offset < self.screen.offsetHeight - self.content.offsetHeight)
+			return;
+
+		self.content.style.top = offset + 'px';
+	};
+
+	/**
+	 * Handle mouse scroll.
+	 * @param object event
+	 */
+	self.handler.mouse_scroll = function(event) {
+		var offset = self.initial_position - (event.deltaY * 10);
+
+		// don't allow scroll above top
+		if (offset > 0)
+			return;
+
+		// don't allow scroll after page is completely visible
+		if (offset < self.screen.offsetHeight - self.content.offsetHeight)
+			return;
+
+		self.content.style.top = offset + 'px';
+		self.initial_position = parseInt(self.content.style.top) || 0;
+	};
+
+	/**
+	 * Handle mouse press.
+	 * @param object event
+	 */
+	self.handler.mouse_up = function(event) {
+		self.initial_position = parseInt(self.content.style.top) || 0;
+
+		self.screen.removeEventListener('mouseup', self.handler.mouse_up);
+		self.screen.removeEventListener('mousemove', self.handler.mouse_move);
+	};
+
+	// finalize object
+	self._init();
+}
+
+/**
  * Function called when document and images have been completely loaded.
  */
 Site.on_load = function() {
@@ -59,7 +149,7 @@ Site.on_load = function() {
 		.attachControls('div#controls span.control');
 
 	// make our own scrollbar
-	Site.scrollbar = new Scrollbar('div#screen', 'div#content');
+	Site.scrollbar = new Site.MobileScroll('div#screen', 'div#content');
 
 	//Lightbox
 	Site.gallery = new LightBox('body.gallery section a', false, false, true);
