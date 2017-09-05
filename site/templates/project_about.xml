@@ -25,7 +25,7 @@
 				cms:eval="uid"
 				/>
 			<cms:collection  include="page_control"/>
-			<cms:collection include="page_control,mobile_menu,jquery_event_drag,jquery_event_scroll,scrollbar"/>
+			<cms:collection include="page_control,mobile_menu"/>
 			<cms:script src="_BASEURL.'/site/scripts/expand.js'" cms:eval="src"/>
 			<cms:module name="head_tag" action="print_tag"/>
 			<cms:raw file="parts/ga.txt"/>
