@@ -1,18 +1,20 @@
 <document>
 	<footer>
 		<!-- show commercial projects link -->
-		<cms:module
-			name="shop"
-			action="show_category"
-			category="commercial"
-			template="parts/commercial_link.xml"
-			/>
-		<a
-			href="investor_relations_link"
-			cms:constant="href"
-			>
-			<cms:text constant="menu_relations"/>
-		</a>
+		<nav>
+			<cms:module
+				name="shop"
+				action="show_category"
+				category="commercial"
+				template="parts/commercial_link.xml"
+				/>
+			<a
+				href="investor_relations_link"
+				cms:constant="href"
+				>
+				<cms:text constant="menu_relations"/>
+			</a>
+		</nav>
 
 		<nav class="footer_menu">
 			<a
@@ -56,6 +58,7 @@
 				<cms:text constant="menu_contact"/>
 			</a>
 		</nav>
+
 		<cms:template file="stock/copyright.xml">
 			<param name="holder" value="copyright_holder"/>
 			<param name="text" value="copyright_text"/>
