@@ -149,7 +149,8 @@ Site.on_load = function() {
 		.attachControls('div#controls span.control');
 
 	// make our own scrollbar
-	Site.scrollbar = new Site.MobileScroll('div#screen', 'div#content');
+	if (!Site.is_mobile())
+		Site.scrollbar = new Site.MobileScroll('div#screen', 'div#content');
 
 	//Lightbox
 	Site.gallery = new LightBox('body.gallery section a', false, false, true);
