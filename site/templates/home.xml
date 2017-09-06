@@ -45,10 +45,10 @@
 					<img
 						class="image"
 						data-name="home_page_title"
-						data-url="about_us_link"
+						data-url="javascript:void(0)"
 						src="_BASEURL.'/site/images/hamerman-logo-small.jpg'"
 						alt="menu_about"
-						cms:constant="data-name,alt,data-url"
+						cms:constant="data-name,alt"
 						cms:eval="src"
 						/>
 					<input type="hidden" value="home_page_title" cms:constant="value"/>
@@ -65,7 +65,7 @@
 
 				<section>
 					<!-- Project title container -->
-					<a class="open_project action"><h1></h1></a>
+					<a class="open_project"><h1></h1></a>
 
 					<!-- Project selection controls -->
 					<div id="controls">
@@ -87,10 +87,10 @@
 							<img
 								class="image"
 								data-name="home_page_title"
-								data-url="about_us_link"
+								data-url="javascript:void(0)"
 								src="_BASEURL.'/site/images/hamerman-logo-small.jpg'"
 								alt="menu_about"
-								cms:constant="data-name,alt,data-url"
+								cms:constant="data-name,alt"
 								cms:eval="src"
 								/>
 							<input type="hidden" value="home_page_title" cms:constant="value"/>
@@ -105,7 +105,7 @@
 						</div>
 
 						<section>
-							<a class="open_project action"><h1></h1></a>
+							<a class="open_project"><h1></h1></a>
 
 							<div id="controls">
 								<div class="knob">
