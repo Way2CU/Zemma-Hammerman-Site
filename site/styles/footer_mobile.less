@@ -34,25 +34,30 @@ footer nav a {
 	color: white;
 	text-decoration: none;
 	font-weight: 700;
+
+	&:after {
+		content: "";
+		position: absolute;
+		top: 50%;
+		right: calc(~'100% - 2px');
+		transform: translatey(-50%);
+		width: 1px;
+		height: 1em;
+		background-color: @color_background;
+	}
+
+	&:last-of-type:after {
+		content: none;
+	}
+
+	&.active {
+		color: @color_red;
+	}
 }
 
-footer nav a:after {
-	content: "";
-	position: absolute;
-	top: 50%;
-	right: calc(~'100% - 2px');
-	transform: translatey(-50%);
-	width: 1px;
-	height: 1em;
-	background-color: @color_background;
-}
-
-footer nav a:last-of-type:after {
-	content: none;
-}
-
-footer nav a.active {
-	color: @color_red;
+footer nav:nth-child(2) a {
+	width: 20%;
+	box-sizing: border-box;
 }
 
 footer div.copyright {
