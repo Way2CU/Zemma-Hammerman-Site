@@ -79,7 +79,7 @@ class zema extends Module {
 		global $section;
 		parent::__construct(__FILE__);
 
-		Events::connect('contact_form', 'submmitted', 'handle_submit', $this);
+		Events::connect('contact_form', 'submitted', 'handle_submit', $this);
 	}
 
 	/**
@@ -122,10 +122,22 @@ class zema extends Module {
 	 * @param array $submit_data
 	 */
 	public function handle_submit($sender, $recipient, $template, $submit_data) {
-		// make sure we have project for submission
-		$project_name = isset($_REQUEST['name']) ? fix_chars($_REQUEST['name']) : null;
-		if (is_null($project_name) || !array_key_exists($project_name, $this->data))
+		$project_name = null;
+
+		// get project name from global form
+		if (isset($submit_data['projects'])) {
+			$project_name = fix_chars($submit_data['projects']);
+
+		// get project name from project contact form
+		} else if (isset($submit_data['name'])) {
+			$project_name = fix_chars($submit_data['name']);
+		}
+
+		// make sure project is defined
+		if (is_null($project_name) || !array_key_exists($project_name, $this->data)) {
+			trigger_error('No project specified or missing configuration.', E_USER_WARNING);
 			return;
+		}
 
 		// create content for sending
 		$content = $this->data[$project_name];
