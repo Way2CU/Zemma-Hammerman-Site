@@ -23,17 +23,17 @@ class zema extends Module {
 	 * @var array
 	 */
 	private $data = array(
-		'achziv' => array(
+		'אכזיב' => array(
 				'MediaTitle' => 'אתר הבית- צמח המרמן',
 				'ProjectID'  => 5544,
 				'Password'   => 'arsiv1306'
 			),
-		'amirey-nof' => array(
+		'אלפי מנשה' => array(
 				'MediaTitle' => 'אתר הבית- צמח המרמן',
 				'ProjectID'  => 5473,
 				'Password'   => 'ami1306'
 			),
-		'betzalel' => array(
+		'תל-אביב' => array(
 				'MediaTitle' => 'אתר הבית- צמח המרמן',
 				'ProjectID'  => 3778,
 				'Password'   => 'bet1306'
@@ -43,17 +43,17 @@ class zema extends Module {
 				'ProjectID'  => 76,
 				'Password'   => 'car1306'
 			),
-		'nofia' => array(
+		'בית שמש' => array(
 				'MediaTitle' => 'אתר הבית- צמח המרמן',
 				'ProjectID'  => 4013,
 				'Password'   => 'nof1306'
 			),
-		'krinizy' => array(
+		'רמת גן' => array(
 				'MediaTitle' => 'אתר הבית- צמח המרמן',
 				'ProjectID'  => 4440,
 				'Password'   => 'kar1306'
 			),
-		'ganei-tikva' => array(
+		'גני תקווה' => array(
 				'MediaTitle' => 'אתר הבית- צמח המרמן',
 				'ProjectID'  => 6799,
 				'Password'   => 'gan1306'
