@@ -23,17 +23,17 @@ class zema extends Module {
 	 * @var array
 	 */
 	private $data = array(
-		'אכזיב' => array(
+		'אכזיב נהריה' => array(
 				'MediaTitle' => 'אתר הבית- צמח המרמן',
 				'ProjectID'  => 5544,
 				'Password'   => 'arsiv1306'
 			),
-		'אלפי מנשה' => array(
+		'אמירי נוף אלפי מנשה' => array(
 				'MediaTitle' => 'אתר הבית- צמח המרמן',
 				'ProjectID'  => 5473,
 				'Password'   => 'ami1306'
 			),
-		'תל-אביב' => array(
+		'בצלאל תל-אביב' => array(
 				'MediaTitle' => 'אתר הבית- צמח המרמן',
 				'ProjectID'  => 3778,
 				'Password'   => 'bet1306'
@@ -43,17 +43,17 @@ class zema extends Module {
 				'ProjectID'  => 76,
 				'Password'   => 'car1306'
 			),
-		'בית שמש' => array(
+		'נופיה בית שמש' => array(
 				'MediaTitle' => 'אתר הבית- צמח המרמן',
 				'ProjectID'  => 4013,
 				'Password'   => 'nof1306'
 			),
-		'רמת גן' => array(
+		'קריניצי החדשה רמת גן' => array(
 				'MediaTitle' => 'אתר הבית- צמח המרמן',
 				'ProjectID'  => 4440,
 				'Password'   => 'kar1306'
 			),
-		'גני תקווה' => array(
+		'לב גני תקוה' => array(
 				'MediaTitle' => 'אתר הבית- צמח המרמן',
 				'ProjectID'  => 6799,
 				'Password'   => 'gan1306'
@@ -126,11 +126,13 @@ class zema extends Module {
 
 		// get project name from global form
 		if (isset($submit_data['projects'])) {
-			$project_name = fix_chars($submit_data['projects']);
+			$project_name = $submit_data['projects'];
+			$full_name = $submit_data['name'];
 
 		// get project name from project contact form
 		} else if (isset($submit_data['name'])) {
-			$project_name = fix_chars($submit_data['name']);
+			$project_name = $submit_data['name'];
+			$full_name = $submit_data['fullname'];
 		}
 
 		// make sure project is defined
@@ -145,9 +147,11 @@ class zema extends Module {
 			if (array_key_exists($form_field, $submit_data))
 				$content[$api_field] = $submit_data[$form_field];
 
-		$name = explode(' ', $submit_data['fullname'], 2);
+		$name = explode(' ', $full_name, 2);
 		$content['Fname'] = $name[0];
-		$content['Lname'] = $name[1];
+		if (count($name) > 1)
+			$content['Lname'] = $name[1]; else
+			$content['Lname'] = '';
 
 		// make api call
 		$handle = curl_init(self::API_ENDPOINT);
