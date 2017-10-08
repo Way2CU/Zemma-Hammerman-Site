@@ -25,20 +25,10 @@
 				>
 				<cms:text constant="menu_home"/>
 			</a>
-			<a
-				class="URL::is_active('about.xml')"
-				href="about_us_link"
-				cms:optional="class"
-				cms:constant="href"
-				>
+			<a href="http://ir.zhg.co.il/company-profile/">
 				<cms:text constant="menu_about"/>
 			</a>
-			<a
-				class="URL::is_active('news.xml')"
-				href="news_link"
-				cms:optional="class"
-				cms:constant="href"
-				>
+			<a href="http://ir.zhg.co.il/press-releases/">
 				<cms:text constant="menu_news"/>
 			</a>
 			<a

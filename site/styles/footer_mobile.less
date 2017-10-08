@@ -25,7 +25,7 @@ footer > a {
 
 footer nav a {
 	display: inline-block;
-	padding: 0.5rem;
+	padding: 1em 0em;
 	vertical-align: middle;
 	position: relative;
 	box-sizing: border-box;
@@ -53,6 +53,12 @@ footer nav a {
 	&.active {
 		color: @color_red;
 	}
+}
+
+footer nav:nth-child(1) a {
+	width: auto;
+	padding: 1em;
+	font-size: 1.2em;
 }
 
 footer nav:nth-child(2) a {
