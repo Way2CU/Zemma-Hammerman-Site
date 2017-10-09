@@ -79,6 +79,13 @@
 				>
 				<cms:text constant="menu_contact"/>
 			</a>
+			<!-- investor relations link -->
+			<a
+				href="investor_relations_link"
+				cms:constant="href"
+				>
+				<cms:text constant="menu_relations"/>
+			</a>
 		</nav>
 	</header>
 </document>
