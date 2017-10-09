@@ -23,17 +23,17 @@ class zema extends Module {
 	 * @var array
 	 */
 	private $data = array(
-		'achziv' => array(
+		'אכזיב נהריה' => array(
 				'MediaTitle' => 'אתר הבית- צמח המרמן',
 				'ProjectID'  => 5544,
 				'Password'   => 'arsiv1306'
 			),
-		'amirey-nof' => array(
+		'אמירי נוף אלפי מנשה' => array(
 				'MediaTitle' => 'אתר הבית- צמח המרמן',
 				'ProjectID'  => 5473,
 				'Password'   => 'ami1306'
 			),
-		'betzalel' => array(
+		'בצלאל תל-אביב' => array(
 				'MediaTitle' => 'אתר הבית- צמח המרמן',
 				'ProjectID'  => 3778,
 				'Password'   => 'bet1306'
@@ -43,17 +43,17 @@ class zema extends Module {
 				'ProjectID'  => 76,
 				'Password'   => 'car1306'
 			),
-		'nofia' => array(
+		'נופיה בית שמש' => array(
 				'MediaTitle' => 'אתר הבית- צמח המרמן',
 				'ProjectID'  => 4013,
 				'Password'   => 'nof1306'
 			),
-		'krinizy' => array(
+		'קריניצי החדשה רמת גן' => array(
 				'MediaTitle' => 'אתר הבית- צמח המרמן',
 				'ProjectID'  => 4440,
 				'Password'   => 'kar1306'
 			),
-		'ganei-tikva' => array(
+		'לב גני תקוה' => array(
 				'MediaTitle' => 'אתר הבית- צמח המרמן',
 				'ProjectID'  => 6799,
 				'Password'   => 'gan1306'
@@ -79,7 +79,7 @@ class zema extends Module {
 		global $section;
 		parent::__construct(__FILE__);
 
-		Events::connect('contact_form', 'submmitted', 'handle_submit', $this);
+		Events::connect('contact_form', 'submitted', 'handle_submit', $this);
 	}
 
 	/**
@@ -122,10 +122,24 @@ class zema extends Module {
 	 * @param array $submit_data
 	 */
 	public function handle_submit($sender, $recipient, $template, $submit_data) {
-		// make sure we have project for submission
-		$project_name = isset($_REQUEST['name']) ? fix_chars($_REQUEST['name']) : null;
-		if (is_null($project_name) || !array_key_exists($project_name, $this->data))
+		$project_name = null;
+
+		// get project name from global form
+		if (isset($submit_data['projects'])) {
+			$project_name = $submit_data['projects'];
+			$full_name = $submit_data['name'];
+
+		// get project name from project contact form
+		} else if (isset($submit_data['name'])) {
+			$project_name = $submit_data['name'];
+			$full_name = $submit_data['fullname'];
+		}
+
+		// make sure project is defined
+		if (is_null($project_name) || !array_key_exists($project_name, $this->data)) {
+			trigger_error('No project specified or missing configuration.', E_USER_WARNING);
 			return;
+		}
 
 		// create content for sending
 		$content = $this->data[$project_name];
@@ -133,9 +147,11 @@ class zema extends Module {
 			if (array_key_exists($form_field, $submit_data))
 				$content[$api_field] = $submit_data[$form_field];
 
-		$name = explode(' ', $submit_data['fullname'], 2);
+		$name = explode(' ', $full_name, 2);
 		$content['Fname'] = $name[0];
-		$content['Lname'] = $name[1];
+		if (count($name) > 1)
+			$content['Lname'] = $name[1]; else
+			$content['Lname'] = '';
 
 		// make api call
 		$handle = curl_init(self::API_ENDPOINT);

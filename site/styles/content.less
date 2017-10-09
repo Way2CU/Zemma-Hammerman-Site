@@ -164,29 +164,34 @@ div#controls div.knob {
 
 a.open_project {
 	position: absolute;
-	top: -1rem;
+	top: 0.2rem;
 	left: 50%;
+	width: 60%;
 
 	text-align: center;
+	text-decoration: none;
 	transform: translate(-50%);
-	visibility: hidden;
 
-	h1:before {
-		display: inline-block;
-		vertical-align: center;
-		content: '';
-		width: 0;
-		height: 0;
-		position: relative;
-		opacity: 1;
+	&.action {
+		top: -1rem;
 
-		border: 0.5rem solid transparent;
-		border-right-color: @color_background;
+		h1:before {
+			display: inline-block;
+			vertical-align: center;
+			content: '';
+			width: 0;
+			height: 0;
+			position: relative;
+			opacity: 1;
 
-		animation-name: attention;
-		animation-iteration-count: infinite;
-		animation-duration: 1.5s;
-		animation-delay: 1s;
+			border: 0.5rem solid transparent;
+			border-right-color: @color_background;
+
+			animation-name: attention;
+			animation-iteration-count: infinite;
+			animation-duration: 1.5s;
+			animation-delay: 1s;
+		}
 	}
 }
 
