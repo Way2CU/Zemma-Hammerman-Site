@@ -139,6 +139,14 @@ Site.MobileScroll = function(screen_selector, content_selector) {
  * Function called when document and images have been completely loaded.
  */
 Site.on_load = function() {
+	// Events
+	for (var i=0; i < Caracal.ContactForm.list.length; i++) {
+			Caracal.ContactForm.list[i].events.connect('submit-success', function(event){
+				fbq('track', 'Lead');
+			});
+		}
+
+
 	// create mobile menu
 	Site.mobile_menu = new Caracal.MobileMenu();
 
